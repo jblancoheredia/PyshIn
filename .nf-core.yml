@@ -1,0 +1,23 @@
+repository_type: pipeline
+
+nf_core_version: 3.4.1
+
+lint:
+  files_exist:
+    - conf/igenomes.config
+    - conf/igenomes_ignored.config
+
+template:
+  org: nf-core
+  name: pyshin
+  description: "In a world of messy VAFs and shifting copy number, one pipeline dares\
+    \ to make sense: PyshIn. It preps, it runs, it crowns the founder, it evolves\
+    \ the lineage\u2014and it serves the fish. Coming soon to a PDF near you."
+  author: Juan Blanco Heredia
+  version: 1.0.0
+  force: true
+  outdir: .
+  skip_features:
+    - igenomes
+    - fastqc
+  is_nfcore: true
