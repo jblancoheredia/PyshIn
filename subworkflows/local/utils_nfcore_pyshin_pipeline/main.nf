@@ -193,7 +193,7 @@ def toolCitationText() {
 
 def toolBibliographyText() {
     def reference_text = [
-            "<li>Gillis S., & Roth A., (2020) PyClone-VI: scalable inference of clonal population structures using whole genome data, BMC Bioinformatics, 21, 571. doi: 10.1186/s12859-020-03919-2</li>"
+            "<li>Gillis S., & Roth A., (2020) PyClone-VI: scalable inference of clonal population structures using whole genome data, BMC Bioinformatics, 21, 571. doi: 10.1186/s12859-020-03919-2</li>",
             "<li>Ewels, P., Magnusson, M., Lundin, S., & Käller, M. (2016). MultiQC: summarize analysis results for multiple tools and samples in a single report. Bioinformatics , 32(19), 3047–3048. doi: /10.1093/bioinformatics/btw354</li>"
         ].join(' ').trim()
     return reference_text
