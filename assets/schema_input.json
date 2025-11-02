@@ -1,33 +1,39 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
     "$id": "https://raw.githubusercontent.com/nf-core/pyshin/main/assets/schema_input.json",
-    "title": "nf-core/pyshin pipeline - params.input schema",
+    "title": "cti/pyshin pipeline - params.input schema",
     "description": "Schema for the file provided with params.input",
     "type": "array",
     "items": {
         "type": "object",
         "properties": {
+            "patient": {
+                "type": "string",
+                "pattern": "^\\S+$",
+                "errorMessage": "Patient id must be provided and cannot contain spaces",
+                "meta": ["patient"]
+            },
             "sample": {
                 "type": "string",
                 "pattern": "^\\S+$",
                 "errorMessage": "Sample name must be provided and cannot contain spaces",
                 "meta": ["id"]
             },
-            "fastq_1": {
+            "cnv_vcf": {
                 "type": "string",
                 "format": "file-path",
                 "exists": true,
-                "pattern": "^([\\S\\s]*\\/)?[^\\s\\/]+\\.f(ast)?q\\.gz$",
-                "errorMessage": "FastQ file for reads 1 must be provided, cannot contain spaces and must have extension '.fq.gz' or '.fastq.gz'"
+                "pattern": "^([\\S\\s]*\\/)?[^\\s\\/]+\\.vcf\\.gz$",
+                "errorMessage": "CNV VCF file 1 must be provided, cannot contain spaces and must have extension '.vcf' or '.vcf.gz'"
             },
-            "fastq_2": {
+            "snp_csv": {
                 "type": "string",
                 "format": "file-path",
                 "exists": true,
-                "pattern": "^([\\S\\s]*\\/)?[^\\s\\/]+\\.f(ast)?q\\.gz$",
-                "errorMessage": "FastQ file for reads 2 cannot contain spaces and must have extension '.fq.gz' or '.fastq.gz'"
+                "pattern": "^([\\S\\s]*\\/)?[^\\s\\/]+\\.csv$",
+                "errorMessage": "CSV file for SNP pileup, cannot contain spaces and must have extension '.csv'"
             }
         },
-        "required": ["sample", "fastq_1"]
+        "required": ["patient", "sample", "cnv_vcf", "snp_csv"]
     }
 }

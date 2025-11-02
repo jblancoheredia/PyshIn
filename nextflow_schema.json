@@ -199,6 +199,47 @@
                     "description": "Display hidden parameters in the help message (only works when --help or --help_full are provided)."
                 }
             }
+        },
+        "pyshin_general_params": {
+            "title": "PyshIn pipeline custom options",
+            "type": "object",
+            "fa_icon": "fas fa-dna",
+            "description": "Options for PyshIn pipeline",
+            "properties": {
+                "n_reiterations": {
+                    "type": "boolean",
+                    "description": "Number of iterations for PyClone-VI",
+                    "fa_icon": "fas fa-book",
+                    "help_text": "Number of iterations for PyClone-VI"
+                },
+                "max_clusters": {
+                    "type": "integer",
+                    "description": "Maximum number of clusters for PyClone-VI",
+                    "fa_icon": "fas fa-book",
+                    "help_text": "Maximum number of clusters for PyClone-VI"
+                },
+                "max_iters": {
+                    "type": "integer",
+                    "description": "Maximum number of iterations for PyClone-VI",
+                    "fa_icon": "fas fa-book",
+                    "help_text": "Maximum number of iterations for PyClone-VI"
+                },
+                "b_model": {
+                    "type": "string",
+                    "description": "Model for PyClone-VI",
+                    "fa_icon": "fas fa-book",
+                    "help_text": "Model for PyClone-VI",
+                    "enum": ["beta-binomial", "binomial"],
+                    "default": "beta-binomial"
+                },
+                "seed": {
+                    "type": "integer",
+                    "description": "Seed for PyClone-VI",
+                    "fa_icon": "fas fa-book",
+                    "help_text": "Seed for PyClone-VI",
+                    "default": 212
+                }
+            }
         }
     },
     "allOf": [

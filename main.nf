@@ -1,36 +1,42 @@
 #!/usr/bin/env nextflow
+nextflow.enable.dsl = 2
+
 /*
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    nf-core/pyshin
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    Github : https://github.com/nf-core/pyshin
-    Website: https://nf-co.re/pyshin
-    Slack  : https://nfcore.slack.com/channels/pyshin
-----------------------------------------------------------------------------------------
+****************************************************************************************************************************
+                         PyshIn: turns variant noise  into  narrative.  It forges PyClone-VI inputs, 
+                         runs the inference, elects the founding  clone, and prunes/grades  possible 
+                         ancestries until a clean phylogeny emerges—then paints the story: branching 
+                         trees, swelling bells, tidy spheres, and the fish plot everyone came to see. 
+                         CN-aware, multi-sample savvy, cohort-scale ready.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                                      Github : https://github.com/jblancoheredia/PyshIn
+                                                Author : blancoj@mskcc.org
+****************************************************************************************************************************
 */
 
 /*
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    IMPORT FUNCTIONS / MODULES / SUBWORKFLOWS / WORKFLOWS
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                                               IMPORT WORKFLOW & SUBWORKFLOWS
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 */
 
-include { PYSHIN  } from './workflows/pyshin'
-include { PIPELINE_INITIALISATION } from './subworkflows/local/utils_nfcore_pyshin_pipeline'
-include { PIPELINE_COMPLETION     } from './subworkflows/local/utils_nfcore_pyshin_pipeline'
+include { PYSHIN                                            } from './workflows/pyshin'
+include { PIPELINE_COMPLETION                               } from './subworkflows/local/utils_nfcore_pyshin_pipeline'
+include { PIPELINE_INITIALISATION                           } from './subworkflows/local/utils_nfcore_pyshin_pipeline'
+
 /*
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    NAMED WORKFLOWS FOR PIPELINE
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                                                NAMED WORKFLOWS FOR PIPELINE
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 */
 
 //
 // WORKFLOW: Run main analysis pipeline depending on type of input
 //
-workflow NFCORE_PYSHIN {
+workflow CTI_PYSHIN {
 
     take:
-    samplesheet // channel: samplesheet read in from --input
+    samplesheet
 
     main:
 
@@ -41,12 +47,12 @@ workflow NFCORE_PYSHIN {
         samplesheet
     )
     emit:
-    multiqc_report = PYSHIN.out.multiqc_report // channel: /path/to/multiqc_report.html
+    multiqc_report = PYSHIN.out.multiqc_report
 }
 /*
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    RUN MAIN WORKFLOW
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                                                      RUN MAIN WORKFLOW
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 */
 
 workflow {
@@ -56,21 +62,18 @@ workflow {
     // SUBWORKFLOW: Run initialisation tasks
     //
     PIPELINE_INITIALISATION (
-        params.version,
-        params.validate_params,
         params.monochrome_logs,
-        args,
+        params.validate_params,
+        params.version,
         params.outdir,
         params.input,
-        params.help,
-        params.help_full,
-        params.show_hidden
+        args
     )
 
     //
     // WORKFLOW: Run main workflow
     //
-    NFCORE_PYSHIN (
+    CTI_PYSHIN (
         PIPELINE_INITIALISATION.out.samplesheet
     )
     //
@@ -78,17 +81,17 @@ workflow {
     //
     PIPELINE_COMPLETION (
         params.email,
-        params.email_on_fail,
-        params.plaintext_email,
         params.outdir,
-        params.monochrome_logs,
         params.hook_url,
-        NFCORE_PYSHIN.out.multiqc_report
+        params.email_on_fail,
+        params.monochrome_logs,
+        params.plaintext_email,
+        CTI_PYSHIN.out.multiqc_report
     )
 }
 
 /*
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    THE END
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                                                           THE END
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 */

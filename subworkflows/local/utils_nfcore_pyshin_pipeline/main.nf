@@ -3,39 +3,37 @@
 //
 
 /*
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    IMPORT FUNCTIONS / MODULES / SUBWORKFLOWS
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                                               IMPORT WORKFLOW & SUBWORKFLOWS
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 */
 
-include { UTILS_NFSCHEMA_PLUGIN     } from '../../nf-core/utils_nfschema_plugin'
-include { paramsSummaryMap          } from 'plugin/nf-schema'
-include { samplesheetToList         } from 'plugin/nf-schema'
-include { paramsHelp                } from 'plugin/nf-schema'
-include { completionEmail           } from '../../nf-core/utils_nfcore_pipeline'
-include { completionSummary         } from '../../nf-core/utils_nfcore_pipeline'
-include { imNotification            } from '../../nf-core/utils_nfcore_pipeline'
-include { UTILS_NFCORE_PIPELINE     } from '../../nf-core/utils_nfcore_pipeline'
-include { UTILS_NEXTFLOW_PIPELINE   } from '../../nf-core/utils_nextflow_pipeline'
+include { paramsHelp                                        } from 'plugin/nf-schema'
+include { imNotification                                    } from '../../nf-core/utils_nfcore_pipeline'
+include { completionEmail                                   } from '../../nf-core/utils_nfcore_pipeline'
+include { paramsSummaryMap                                  } from 'plugin/nf-schema'
+include { completionSummary                                 } from '../../nf-core/utils_nfcore_pipeline'
+include { samplesheetToList                                 } from 'plugin/nf-schema'
+include { UTILS_NFCORE_PIPELINE                             } from '../../nf-core/utils_nfcore_pipeline'
+include { UTILS_NFSCHEMA_PLUGIN                             } from '../../nf-core/utils_nfschema_plugin'
+include { UTILS_NEXTFLOW_PIPELINE                           } from '../../nf-core/utils_nextflow_pipeline'
+
 
 /*
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    SUBWORKFLOW TO INITIALISE PIPELINE
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                                             SUBWORKFLOW TO INITIALISE PIPELINE
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 */
 
 workflow PIPELINE_INITIALISATION {
 
     take:
-    version           // boolean: Display version and exit
-    validate_params   // boolean: Boolean whether to validate parameters against the schema at runtime
-    monochrome_logs   // boolean: Do not use coloured log outputs
-    nextflow_cli_args //   array: List of positional nextflow CLI args
-    outdir            //  string: The output directory where the results will be saved
-    input             //  string: Path to input samplesheet
-    help              // boolean: Display help message and exit
-    help_full         // boolean: Show the full help message
-    show_hidden       // boolean: Show hidden parameters in the help message
+    monochrome_logs  
+    validate_params  
+    version          
+    outdir           
+    input            
+    nextflow_cli_args
 
     main:
 
@@ -54,35 +52,16 @@ workflow PIPELINE_INITIALISATION {
     //
     // Validate parameters and generate parameter summary to stdout
     //
-    before_text = """
--\033[2m----------------------------------------------------\033[0m-
-                                        \033[0;32m,--.\033[0;30m/\033[0;32m,-.\033[0m
-\033[0;34m        ___     __   __   __   ___     \033[0;32m/,-._.--~\'\033[0m
-\033[0;34m  |\\ | |__  __ /  ` /  \\ |__) |__         \033[0;33m}  {\033[0m
-\033[0;34m  | \\| |       \\__, \\__/ |  \\ |___     \033[0;32m\\`-._,-`-,\033[0m
-                                        \033[0;32m`._,._,\'\033[0m
-\033[0;35m  nf-core/pyshin ${workflow.manifest.version}\033[0m
--\033[2m----------------------------------------------------\033[0m-
-"""
-    after_text = """${workflow.manifest.doi ? "\n* The pipeline\n" : ""}${workflow.manifest.doi.tokenize(",").collect { "    https://doi.org/${it.trim().replace('https://doi.org/','')}"}.join("\n")}${workflow.manifest.doi ? "\n" : ""}
-* The nf-core framework
-    https://doi.org/10.1038/s41587-020-0439-x
-
-* Software dependencies
-    https://github.com/nf-core/pyshin/blob/main/CITATIONS.md
-"""
-    command = "nextflow run ${workflow.manifest.name} -profile <docker/singularity/.../institute> --input samplesheet.csv --outdir <OUTDIR>"
+    UTILS_NFSCHEMA_PLUGIN (
+        workflow,
+        validate_params,
+        null
+    )
 
     UTILS_NFSCHEMA_PLUGIN (
         workflow,
         validate_params,
-        null,
-        help,
-        help_full,
-        show_hidden,
-        before_text,
-        after_text,
-        command
+        null
     )
 
     //
@@ -93,28 +72,30 @@ workflow PIPELINE_INITIALISATION {
     )
 
     //
+    // Custom validation for pipeline parameters
+    //
+    validateInputParameters()
+
+    //
     // Create channel from input file provided through params.input
     //
-
     Channel
         .fromList(samplesheetToList(params.input, "${projectDir}/assets/schema_input.json"))
-        .map {
-            meta, fastq_1, fastq_2 ->
-                if (!fastq_2) {
-                    return [ meta.id, meta + [ single_end:true ], [ fastq_1 ] ]
-                } else {
-                    return [ meta.id, meta + [ single_end:false ], [ fastq_1, fastq_2 ] ]
-                }
-        }
-        .groupTuple()
-        .map { samplesheet ->
-            validateInputSamplesheet(samplesheet)
-        }
-        .map {
-            meta, fastqs ->
-                return [ meta, fastqs.flatten() ]
-        }
-        .set { ch_samplesheet }
+        .splitCsv(header: true)
+        .map { row ->
+            def required = ['patient','sample_id','cnv_vcf','snp_csv']
+            def missing  = required.findAll { !row.containsKey(it) || !row[it] }
+            if (missing) throw new IllegalArgumentException("samplesheet missing: ${missing.join(', ')}")
+            def meta = [ patient: row.patient as String, sample_id: row.sample_id as String ]
+            def cnv  = file(row.cnv_vcf)
+            def snp  = file(row.snp_csv)
+            [ meta.patient, meta, cnv, snp ]
+      }
+      .groupTuple()
+      .map { patient_id, metas, cnvs, snps ->
+          [ patient_id, metas as List<Map>, cnvs as List<File>, snps as List<File> ]
+      }
+      .set { ch_samplesheet }
 
     emit:
     samplesheet = ch_samplesheet
@@ -122,20 +103,20 @@ workflow PIPELINE_INITIALISATION {
 }
 
 /*
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    SUBWORKFLOW FOR PIPELINE COMPLETION
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                                                         SUBWORKFLOW FOR PIPELINE COMPLETION
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 */
 
 workflow PIPELINE_COMPLETION {
 
     take:
     email           //  string: email address
-    email_on_fail   //  string: email address sent on pipeline failure
-    plaintext_email // boolean: Send plain-text email instead of HTML
     outdir          //    path: Path to output directory where results will be published
-    monochrome_logs // boolean: Disable ANSI colour codes in log output
     hook_url        //  string: hook URL for notifications
+    email_on_fail   //  string: email address sent on pipeline failure
+    monochrome_logs // boolean: Disable ANSI colour codes in log output
+    plaintext_email // boolean: Send plain-text email instead of HTML
     multiqc_report  //  string: Path to MultiQC report
 
     main:
@@ -170,10 +151,17 @@ workflow PIPELINE_COMPLETION {
 }
 
 /*
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    FUNCTIONS
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                                                                      FUNCTIONS
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 */
+
+//
+// Check and validate pipeline parameters
+//
+def validateInputParameters() {
+    genomeExistsError()
+}
 
 //
 // Validate channels from input samplesheet
@@ -189,44 +177,33 @@ def validateInputSamplesheet(input) {
 
     return [ metas[0], fastqs ]
 }
+
 //
 // Generate methods description for MultiQC
 //
 def toolCitationText() {
-    // TODO nf-core: Optionally add in-text citation tools to this list.
-    // Can use ternary operators to dynamically construct based conditions, e.g. params["run_xyz"] ? "Tool (Foo et al. 2023)" : "",
-    // Uncomment function in methodsDescriptionText to render in MultiQC report
     def citation_text = [
             "Tools used in the workflow included:",
+            "PyClone-VI (Gillis & Roth 2020),",
             "MultiQC (Ewels et al. 2016)",
             "."
         ].join(' ').trim()
-
     return citation_text
 }
 
 def toolBibliographyText() {
-    // TODO nf-core: Optionally add bibliographic entries to this list.
-    // Can use ternary operators to dynamically construct based conditions, e.g. params["run_xyz"] ? "<li>Author (2023) Pub name, Journal, DOI</li>" : "",
-    // Uncomment function in methodsDescriptionText to render in MultiQC report
     def reference_text = [
+            "<li>Gillis S., & Roth A., (2020) PyClone-VI: scalable inference of clonal population structures using whole genome data, BMC Bioinformatics, 21, 571. doi: 10.1186/s12859-020-03919-2</li>"
             "<li>Ewels, P., Magnusson, M., Lundin, S., & Käller, M. (2016). MultiQC: summarize analysis results for multiple tools and samples in a single report. Bioinformatics , 32(19), 3047–3048. doi: /10.1093/bioinformatics/btw354</li>"
         ].join(' ').trim()
-
     return reference_text
 }
 
 def methodsDescriptionText(mqc_methods_yaml) {
-    // Convert  to a named map so can be used as with familiar NXF ${workflow} variable syntax in the MultiQC YML file
     def meta = [:]
     meta.workflow = workflow.toMap()
     meta["manifest_map"] = workflow.manifest.toMap()
-
-    // Pipeline DOI
     if (meta.manifest_map.doi) {
-        // Using a loop to handle multiple DOIs
-        // Removing `https://doi.org/` to handle pipelines using DOIs vs DOI resolvers
-        // Removing ` ` since the manifest.doi is a string and not a proper list
         def temp_doi_ref = ""
         def manifest_doi = meta.manifest_map.doi.tokenize(",")
         manifest_doi.each { doi_ref ->
@@ -235,20 +212,10 @@ def methodsDescriptionText(mqc_methods_yaml) {
         meta["doi_text"] = temp_doi_ref.substring(0, temp_doi_ref.length() - 2)
     } else meta["doi_text"] = ""
     meta["nodoi_text"] = meta.manifest_map.doi ? "" : "<li>If available, make sure to update the text to include the Zenodo DOI of version of the pipeline used. </li>"
-
-    // Tool references
     meta["tool_citations"] = ""
     meta["tool_bibliography"] = ""
-
-    // TODO nf-core: Only uncomment below if logic in toolCitationText/toolBibliographyText has been filled!
-    // meta["tool_citations"] = toolCitationText().replaceAll(", \\.", ".").replaceAll("\\. \\.", ".").replaceAll(", \\.", ".")
-    // meta["tool_bibliography"] = toolBibliographyText()
-
-
     def methods_text = mqc_methods_yaml.text
-
     def engine =  new groovy.text.SimpleTemplateEngine()
     def description_html = engine.createTemplate(methods_text).make(meta)
-
     return description_html.toString()
 }
