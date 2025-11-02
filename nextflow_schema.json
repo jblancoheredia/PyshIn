@@ -236,8 +236,19 @@
                     "type": "integer",
                     "description": "Seed for PyClone-VI",
                     "fa_icon": "fas fa-book",
-                    "help_text": "Seed for PyClone-VI",
-                    "default": 212
+                    "help_text": "Seed for PyClone-VI"
+                },
+                "purity_file": {
+                    "type": "string",
+                    "description": "Purity file for PyClone-VI",
+                    "fa_icon": "fas fa-book",
+                    "help_text": "Purity file for PyClone-VI"
+                },
+                "isdriver_file": {
+                    "type": "string",
+                    "description": "Isdriver file for PyClone-VI",
+                    "fa_icon": "fas fa-book",
+                    "help_text": "Isdriver file for PyClone-VI"
                 }
             }
         }
