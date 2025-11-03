@@ -249,6 +249,12 @@
                     "description": "Isdriver file for PyClone-VI",
                     "fa_icon": "fas fa-book",
                     "help_text": "Isdriver file for PyClone-VI"
+                },
+                "mutations_file": {
+                    "type": "string",
+                    "description": "Mutations file for PyClone-VI",
+                    "fa_icon": "fas fa-book",
+                    "help_text": "Mutations file for PyClone-VI"
                 }
             }
         }
