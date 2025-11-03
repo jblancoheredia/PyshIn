@@ -26,10 +26,12 @@ process PREPVI {
     def meta = [ id: patient_id ]
     def prefix = task.ext.prefix ?: "${patient_id}"
     def samples = (metas instanceof List) ? metas.collect{ it.sample_id as String }.join(',') : ''
+    def vcf_files = (vcfs instanceof List) ? vcfs.join(' ') : vcfs
+    def csv_files = (csvs instanceof List) ? csvs.join(' ') : csvs
     """
     mkdir VCF/ CSV
-    cp ${vcfs} VCF/
-    cp ${csvs} CSV/
+    cp ${vcf_files} VCF/
+    cp ${csv_files} CSV/
 
     prepvi \\
         --dnlt . \\
