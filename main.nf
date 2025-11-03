@@ -47,7 +47,8 @@ workflow CTI_PYSHIN {
         samplesheet
     )
     emit:
-    multiqc_report = PYSHIN.out.multiqc_report
+    versions = PYSHIN.out.versions
+//    multiqc_report = PYSHIN.out.multiqc_report
 }
 /*
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
