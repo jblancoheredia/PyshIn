@@ -77,12 +77,28 @@ workflow PIPELINE_INITIALISATION {
     Channel
         .fromList(samplesheetToList(params.input, "${projectDir}/assets/schema_input.json"))
         .map { row ->
+            def rec
+            if (row instanceof Map) {
+                rec = row
+            } else if (row instanceof List) {
+                if (row.size() < 4) {
+                    throw new IllegalArgumentException("samplesheet row has fewer than 4 columns: ${row}")
+                }
+                rec = [
+                    patient  : row[0],
+                    sample_id: row[1],
+                    cnv_vcf  : row[2],
+                    snp_csv  : row[3]
+                ]
+            } else {
+                throw new IllegalArgumentException("Unsupported samplesheet row type: ${row?.getClass()?.name}")
+            }
             def required = ['patient','sample_id','cnv_vcf','snp_csv']
-            def missing  = required.findAll { !row.containsKey(it) || !row[it] }
+            def missing  = required.findAll { !rec.containsKey(it) || !rec[it] }
             if (missing) throw new IllegalArgumentException("samplesheet missing: ${missing.join(', ')}")
-            def meta = [ patient: row.patient as String, sample_id: row.sample_id as String ]
-            def cnv  = file(row.cnv_vcf)
-            def snp  = file(row.snp_csv)
+            def meta = [ patient: rec.patient as String, sample_id: rec.sample_id as String ]
+            def cnv  = file(rec.cnv_vcf)
+            def snp  = file(rec.snp_csv)
             [ meta.patient, meta, cnv, snp ]
       }
       .groupTuple()
