@@ -81,15 +81,24 @@ workflow PIPELINE_INITIALISATION {
             if (row instanceof Map) {
                 rec = row
             } else if (row instanceof List) {
-                if (row.size() < 4) {
-                    throw new IllegalArgumentException("samplesheet row has fewer than 4 columns: ${row}")
+                if (row.size() >= 4 && !(row[0] instanceof Map)) {
+                    rec = [
+                        patient  : row[0],
+                        sample_id: row[1],
+                        cnv_vcf  : row[2],
+                        snp_csv  : row[3]
+                    ]
+                } else if (row.size() >= 3 && (row[0] instanceof Map)) {
+                    def metaMap = row[0] as Map
+                    rec = [
+                        patient  : metaMap.patient ?: metaMap.id,
+                        sample_id: metaMap.id ?: metaMap.sample_id,
+                        cnv_vcf  : row[1],
+                        snp_csv  : row[2]
+                    ]
+                } else {
+                    throw new IllegalArgumentException("samplesheet row is not in an expected format: ${row}")
                 }
-                rec = [
-                    patient  : row[0],
-                    sample_id: row[1],
-                    cnv_vcf  : row[2],
-                    snp_csv  : row[3]
-                ]
             } else {
                 throw new IllegalArgumentException("Unsupported samplesheet row type: ${row?.getClass()?.name}")
             }
