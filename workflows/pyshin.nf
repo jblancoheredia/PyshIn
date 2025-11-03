@@ -122,7 +122,7 @@ workflow PYSHIN {
 //    )
 
 //    emit:multiqc_report = MULTIQC.out.report.toList() // channel: /path/to/multiqc_report.html
-    versions       = ch_versions                 // channel: [ path(versions.yml) ]
+      emit: versions       = ch_versions                 // channel: [ path(versions.yml) ]
 
 }
 
