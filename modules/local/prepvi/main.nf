@@ -1,5 +1,5 @@
 process PREPVI {
-    tag "$meta.patient"
+    tag "$patient_id"
     label 'process_high'
 
     conda "${moduleDir}/environment.yml"
@@ -8,7 +8,7 @@ process PREPVI {
         'blancojmskcc/prepvi:3.7.0' }"
 
     input:
-    tuple val(meta), val(vcfs), val(csvs)
+    tuple val(patient_id), val(metas), val(vcfs), val(csvs)
     path(mut_file)
     path(pty_file)
 
@@ -23,8 +23,9 @@ process PREPVI {
 
     script:
     def args = task.ext.args ?: ''
-    def prefix = task.ext.prefix ?: "${meta.patient}"
-    def samples = task.ext.prefix ?: "${meta.samples}"
+    def meta = [ id: patient_id ]
+    def prefix = task.ext.prefix ?: "${patient_id}"
+    def samples = (metas instanceof List) ? metas.collect{ it.sample_id as String }.join(',') : ''
     """
     mkdir VCF/ CSV
     cp ${vcfs} VCF/
@@ -33,7 +34,7 @@ process PREPVI {
     prepvi \\
         --dnlt . \\
         --dir_csv CSV/ \\
-        --dir_cnv VFC/ \\
+        --dir_cnv VCF/ \\
         --patient ${prefix}   \\
         --samples ${samples}  \\
         --dir_mut ${mut_file} \\
@@ -48,8 +49,9 @@ process PREPVI {
     """
     stub:
     def args = task.ext.args ?: ''
-    def prefix = task.ext.prefix ?: "${meta.id}"
-    """   
+    def meta = [ id: patient_id ]
+    def prefix = task.ext.prefix ?: "${patient_id}"
+    """
     touch ${prefix}_PRE_PyCloneVI_INN.tsv
 
     cat <<-END_VERSIONS > versions.yml
