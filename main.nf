@@ -76,6 +76,7 @@ workflow {
     CTI_PYSHIN (
         PIPELINE_INITIALISATION.out.samplesheet
     )
+
     //
     // SUBWORKFLOW: Run completion tasks
     //
