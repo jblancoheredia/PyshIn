@@ -13,7 +13,7 @@
                 "errorMessage": "Patient id must be provided and cannot contain spaces",
                 "meta": ["patient"]
             },
-            "sample": {
+            "sample_id": {
                 "type": "string",
                 "pattern": "^\\S+$",
                 "errorMessage": "Sample name must be provided and cannot contain spaces",
@@ -34,6 +34,6 @@
                 "errorMessage": "CSV file for SNP pileup, cannot contain spaces and must have extension '.csv'"
             }
         },
-        "required": ["patient", "sample", "cnv_vcf", "snp_csv"]
+        "required": ["patient", "sample_id", "cnv_vcf", "snp_csv"]
     }
 }
