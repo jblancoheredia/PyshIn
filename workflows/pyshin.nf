@@ -58,7 +58,7 @@ workflow PYSHIN {
     //
     // PREPVI
     //
-    PREPVI (ch_samplesheet)
+    PREPVI (ch_samplesheet, params.mutations_file, params.purity_file)
     ch_prepvi_tsv = PREPVI.out.tsv
     ch_versions = ch_versions.mix(PREPVI.out.versions)
 
