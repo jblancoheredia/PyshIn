@@ -87,8 +87,8 @@ workflow {
         params.hook_url,
         params.email_on_fail,
         params.monochrome_logs,
-        params.plaintext_email,
-        CTI_PYSHIN.out.multiqc_report
+        params.plaintext_email
+//        CTI_PYSHIN.out.multiqc_report
     )
 }
 
