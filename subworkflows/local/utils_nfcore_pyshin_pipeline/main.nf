@@ -76,7 +76,6 @@ workflow PIPELINE_INITIALISATION {
     //
     Channel
         .fromList(samplesheetToList(params.input, "${projectDir}/assets/schema_input.json"))
-        .splitCsv(header: true)
         .map { row ->
             def required = ['patient','sample_id','cnv_vcf','snp_csv']
             def missing  = required.findAll { !row.containsKey(it) || !row[it] }
