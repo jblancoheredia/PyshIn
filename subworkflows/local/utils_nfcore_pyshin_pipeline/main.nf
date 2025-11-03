@@ -112,7 +112,7 @@ workflow PIPELINE_COMPLETION {
     email_on_fail   //  string: email address sent on pipeline failure
     monochrome_logs // boolean: Disable ANSI colour codes in log output
     plaintext_email // boolean: Send plain-text email instead of HTML
-    multiqc_report  //  string: Path to MultiQC report
+//    multiqc_report  //  string: Path to MultiQC report
 
     main:
     summary_params = paramsSummaryMap(workflow, parameters_schema: "nextflow_schema.json")
