@@ -1,5 +1,5 @@
 process PREPVI {
-    tag "$meta.id"
+    tag "$meta.patient"
     label 'process_high'
 
     conda "${moduleDir}/environment.yml"
@@ -8,10 +8,11 @@ process PREPVI {
         'blancojmskcc/prepvi:3.7.0' }"
 
     input:
-    tuple val(meta),  path(mut_file)
-    tuple val(meta1), path(pty_file)
-    tuple val(meta2), path(cnv_dir)
-    tuple val(meta3), path(csv_dir)
+    tuple val(meta), val(vcfs), val(csvs)
+    path(mut_file)
+    path(pty_file)
+
+
 
     output:
     tuple val(meta), path("*._PRE_PyCloneVI_INN.tsv"), emit: tsv
@@ -22,15 +23,19 @@ process PREPVI {
 
     script:
     def args = task.ext.args ?: ''
-    def prefix = task.ext.prefix ?: "${meta.id}"
+    def prefix = task.ext.prefix ?: "${meta.patient}"
     def samples = task.ext.prefix ?: "${meta.samples}"
     """
+    mkdir VCF/ CSV
+    cp ${vcfs} VCF/
+    cp ${csvs} CSV/
+
     prepvi \\
         --dnlt . \\
+        --dir_csv CSV/ \\
+        --dir_cnv VFC/ \\
         --patient ${prefix}   \\
         --samples ${samples}  \\
-        --dir_cnv ${cnv_dir}  \\
-        --dir_csv ${csv_dir}  \\
         --dir_mut ${mut_file} \\
         --dir_purity ${pty_file} \\
         --max_workers ${task.cpus} \\
