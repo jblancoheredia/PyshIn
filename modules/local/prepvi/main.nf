@@ -39,6 +39,7 @@ process PREPVI {
         --dnlt . \\
         --dir_csv CSV/ \\
         --dir_cnv VCF/  \\
+        --patient ${prefix} \\
         --samples ${samples} \\
         --dir_mut ${mut_file} \\
         --dir_purity ${pty_file} \\
