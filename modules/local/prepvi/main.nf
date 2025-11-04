@@ -29,8 +29,10 @@ process PREPVI {
 
     """
     mkdir VCF/ CSV
-    cp ${vcf_files} VCF/
-    cp ${csv_files} CSV/
+    mkdir VCF/${prefix}/
+    mkdir CSV/${prefix}/
+    cp ${vcf_files} VCF/${prefix}/
+    cp ${csv_files} CSV/${prefix}/
 
     mkdir -p .mplconfig
     export MPLCONFIGDIR="\$PWD/.mplconfig"
