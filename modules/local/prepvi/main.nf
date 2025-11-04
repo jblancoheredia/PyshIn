@@ -35,15 +35,12 @@ process PREPVI {
     mkdir -p .mplconfig
     export MPLCONFIGDIR="\$PWD/.mplconfig"
 
-    echo "patient"    > patients.csv
-    echo "${prefix}" >> patients.csv
-
     prepvi \\
         --dnlt . \\
         --dir_csv CSV/ \\
         --dir_cnv VCF/  \\
+        --patient ${prefix} \\
         --dir_mut ${mut_file} \\
-        --patient patients.csv \\
         --dir_purity ${pty_file} \\
         --max_workers ${task.cpus} \\
         ${args}
