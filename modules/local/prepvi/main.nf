@@ -25,7 +25,6 @@ process PREPVI {
     def args = task.ext.args ?: ''
     def meta = [ id: patient_id ]
     def prefix = task.ext.prefix ?: "${patient_id}"
-    def samples = (metas instanceof List) ? metas.collect{ it.sample_id as String }.join(',') : ''
     def vcf_files = (vcfs instanceof List) ? vcfs.join(' ') : vcfs
     def csv_files = (csvs instanceof List) ? csvs.join(' ') : csvs
     """
@@ -37,8 +36,7 @@ process PREPVI {
         --dnlt . \\
         --dir_csv CSV/ \\
         --dir_cnv VCF/ \\
-        --patient ${prefix}   \\
-        --samples ${samples}  \\
+        --patient ${prefix} \\
         --dir_mut ${mut_file} \\
         --dir_purity ${pty_file} \\
         --max_workers ${task.cpus} \\
