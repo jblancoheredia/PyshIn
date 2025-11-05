@@ -9,6 +9,7 @@ process PREPVI {
 
     input:
     tuple val(patient_id), val(metas), val(vcfs), val(csvs)
+    val(samples_mode)
     path(mut_file)
     path(pty_file)
 
@@ -45,6 +46,7 @@ process PREPVI {
         --dir_mut ${mut_file} \\
         --dir_purity ${pty_file} \\
         --max_workers ${task.cpus} \\
+        --samples_mode ${samples_mode} \\
         ${args}
 
     set +o noclobber
