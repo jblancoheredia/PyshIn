@@ -21,15 +21,15 @@ process PREPVI {
     task.ext.when == null || task.ext.when
 
     script:
+    def args            = task.ext.args ?: ''
+    def patient_id_str  = patient_id.toString()
     def meta            = [:] as LinkedHashMap
     meta.id             = patient_id_str
     meta.patient        = patient_id_str
-    def args            = task.ext.args ?: ''
     def prefix          = task.ext.prefix ?: "${patient_id}"
     def samples         = metas.collect { it.sample_id }.join(',')
     def csv_files       = (csvs instanceof List) ? csvs.join(' ') : csvs
     def vcf_files       = (vcfs instanceof List) ? vcfs.join(' ') : vcfs
-    def patient_id_str  = patient_id.toString()
 
     """
     rm .command.trace

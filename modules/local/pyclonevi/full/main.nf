@@ -25,8 +25,8 @@ process PYCLONEVI_FULL {
     script:
     def args = task.ext.args ?: ''
     def args2 = task.ext.args2 ?: ''
-    def prefix = task.ext.prefix ?: "${meta_map.id}"
     def meta_map = (meta instanceof Map) ? meta : [ id: meta?.toString() ?: 'unknown', patient: meta?.toString() ?: 'unknown' ]
+    def prefix = task.ext.prefix ?: "${meta_map.id}"
     """
     pyclone-vi fit  \\
         -i ${tsv_in} \\
