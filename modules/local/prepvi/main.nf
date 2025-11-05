@@ -14,8 +14,8 @@ process PREPVI {
     path(pty_file)
 
     output:
-    tuple val([ id: patient_id, patient: patient_id ]), path("*_PyCloneVI_INN.tsv"), emit: tsv
-    path "versions.yml"                                                            , emit: versions
+    tuple val([ id: $patient_id, patient: $patient_id ]), path("*_PyCloneVI_INN.tsv"), emit: tsv
+    path "versions.yml"                                                              , emit: versions
 
     when:
     task.ext.when == null || task.ext.when
