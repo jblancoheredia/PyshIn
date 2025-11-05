@@ -255,6 +255,12 @@
                     "description": "Mutations file for PyClone-VI",
                     "fa_icon": "fas fa-book",
                     "help_text": "Mutations file for PyClone-VI"
+                },
+                "samples_mode": {
+                    "type": "string",
+                    "description": "Option to run all samples or only plasmas",
+                    "fa_icon": "fas fa-book",
+                    "help_text": "Set to 'all' for all samples or as 'not' for only plasma samples"
                 }
             }
         }
