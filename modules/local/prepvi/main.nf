@@ -47,6 +47,8 @@ process PREPVI {
         --max_workers ${task.cpus} \\
         ${args}
 
+    set +o noclobber
+    
     cat <<-END_VERSIONS > versions.yml
     "${task.process}":
         prepvi: "3.7.0"
