@@ -22,7 +22,10 @@ process PREPVI {
 
     script:
     def args        = task.ext.args ?: ''
-    def meta        = [ id: patient_id, patient: patient_id ]
+    def patient_id_str = patient_id.toString()
+    def meta        = [:] as LinkedHashMap
+    meta.id = patient_id_str
+    meta.patient = patient_id_str
     def prefix      = task.ext.prefix ?: "${patient_id}"
     def samples     = metas.collect { it.sample_id }.join(',')
     def csv_files   = (csvs instanceof List) ? csvs.join(' ') : csvs
@@ -59,7 +62,10 @@ process PREPVI {
     """
     stub:
     def args = task.ext.args ?: ''
-    def meta = [ id: patient_id, patient: patient_id ]
+    def patient_id_str = patient_id.toString()
+    def meta = [:] as LinkedHashMap
+    meta.id = patient_id_str
+    meta.patient = patient_id_str
     def prefix = task.ext.prefix ?: "${patient_id}"
     """
     touch ${prefix}_PyCloneVI_INN.tsv

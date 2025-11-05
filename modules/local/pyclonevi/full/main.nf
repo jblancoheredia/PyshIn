@@ -1,5 +1,5 @@
 process PYCLONEVI_FULL {
-    tag "$meta.id"
+    tag "${meta instanceof Map ? meta.id : meta}"
     label "process_high"
     
     conda "${moduleDir}/environment.yml"
@@ -25,7 +25,8 @@ process PYCLONEVI_FULL {
     script:
     def args = task.ext.args ?: ''
     def args2 = task.ext.args2 ?: ''
-    def prefix = task.ext.prefix ?: "${meta.id}"
+    def prefix = task.ext.prefix ?: "${meta_map.id}"
+    def meta_map = (meta instanceof Map) ? meta : [ id: meta?.toString() ?: 'unknown', patient: meta?.toString() ?: 'unknown' ]
     """
     pyclone-vi fit  \\
         -i ${tsv_in} \\
@@ -48,7 +49,8 @@ process PYCLONEVI_FULL {
     END_VERSIONS
     """
     stub:
-    def prefix = task.ext.prefix ?: "${meta.id}"
+    def meta_map = (meta instanceof Map) ? meta : [ id: meta?.toString() ?: 'unknown', patient: meta?.toString() ?: 'unknown' ]
+    def prefix = task.ext.prefix ?: "${meta_map.id}"
     """
     touch ${prefix}_PyCloneVI_OUT.tsv
 
