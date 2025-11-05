@@ -14,6 +14,7 @@ include { paramsSummaryMap                                                      
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 */
 
+include { AFTPVI                                                                        } from '../modules/local/aftpvi/main'
 include { PREPVI                                                                        } from '../modules/local/prepvi/main'
 include { MULTIQC                                                                       } from '../modules/nf-core/multiqc/main'
 include { PYCLONEVI_FULL                                                                } from '../modules/local/pyclonevi/full/main' 
