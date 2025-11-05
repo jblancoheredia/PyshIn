@@ -29,6 +29,7 @@ process PREPVI {
     def vcf_files   = (vcfs instanceof List) ? vcfs.join(' ') : vcfs
 
     """
+    rm .command.trace
     mkdir VCF/ CSV
     mkdir VCF/${prefix}/
     mkdir CSV/${prefix}/
