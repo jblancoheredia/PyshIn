@@ -22,10 +22,8 @@ process PREPVI {
 
     script:
     def args            = task.ext.args ?: ''
-    def patient_id_str  = patient_id.toString()
-    def meta            = [:] as LinkedHashMap
-    meta.id             = patient_id_str
-    meta.patient        = patient_id_str
+    def patient_id_val  = patient_id.toString()
+    def meta            = [ id: patient_id_val, patient: patient_id_val ]
     def prefix          = task.ext.prefix ?: "${patient_id}"
     def samples         = metas.collect { it.sample_id }.join(',')
     def csv_files       = (csvs instanceof List) ? csvs.join(' ') : csvs
@@ -53,7 +51,8 @@ process PREPVI {
         --samples_mode ${samples_mode} \\
         ${args}
 
-    mv ${prefix}/${prefix}_PyCloneVI_INN.tsv .
+    mv ${prefix}/${prefix}_PyCloneVI_INN.tsv . || exit 1
+    test -f ${prefix}_PyCloneVI_INN.tsv || exit 1
     
     cat <<-END_VERSIONS > versions.yml
     "${task.process}":
@@ -62,10 +61,8 @@ process PREPVI {
     """
     stub:
     def args = task.ext.args ?: ''
-    def patient_id_str = patient_id.toString()
-    def meta = [:] as LinkedHashMap
-    meta.id = patient_id_str
-    meta.patient = patient_id_str
+    def patient_id_val = patient_id.toString()
+    def meta = [ id: patient_id_val, patient: patient_id_val ]
     def prefix = task.ext.prefix ?: "${patient_id}"
     """
     touch ${prefix}_PyCloneVI_INN.tsv
