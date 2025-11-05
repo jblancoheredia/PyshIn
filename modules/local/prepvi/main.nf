@@ -14,8 +14,8 @@ process PREPVI {
     path(pty_file)
 
     output:
-    tuple val(meta), path("*._PRE_PyCloneVI_INN.tsv"), emit: tsv
-    path "versions.yml"                              , emit: versions
+    tuple val(meta), path("*._PyCloneVI_INN.tsv"), emit: tsv
+    path "versions.yml"                          , emit: versions
 
     when:
     task.ext.when == null || task.ext.when
@@ -48,6 +48,8 @@ process PREPVI {
         --max_workers ${task.cpus} \\
         --samples_mode ${samples_mode} \\
         ${args}
+
+    mv ${prefix}/${prefix}_PyCloneVI_INN.tsv .
 
     set +o noclobber
     
