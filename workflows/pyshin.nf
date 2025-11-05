@@ -56,18 +56,29 @@ workflow PYSHIN {
     ch_multiqc_files = Channel.empty()
 
     //
-    // PREPVI
+    // PRE PYCLONE-VI
     //
     PREPVI (ch_samplesheet, params.samples_mode, params.mutations_file, params.purity_file)
     ch_prepvi_tsv = PREPVI.out.tsv
     ch_versions = ch_versions.mix(PREPVI.out.versions)
 
     //
-    // PYCLONEVI_FULL
+    // PYCLONE-VI_FULL
     //
     PYCLONEVI_FULL (ch_prepvi_tsv, params.n_reiterations, params.max_clusters, params.max_iters, params.b_model, params.seed)
     ch_pyclonevi_tsv = PYCLONEVI_FULL.out.tsv
     ch_versions = ch_versions.mix(PYCLONEVI_FULL.out.versions)
+
+    ch_aftpvi_inn = (ch_prepvi_tsv).join(ch_pyclonevi_tsv)
+
+    //
+    // AFTER_PYCLONE-VI
+    //
+    AFTPVI (ch_aftpvi_inn, params.isdriver_file, params.samples_mode, params.mutations_file)
+    ch_edited_data = AFTPVI.out.ori
+    ch_original_data = AFTPVI.out.ori
+    ch_versions = ch_versions.mix(AFTPVI.out.versions)
+
 
     //
     // Collate and save software versions

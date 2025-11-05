@@ -1,5 +1,5 @@
 process PYCLONEVI_FULL {
-    tag "$meta.id"
+    tag "$meta.patient"
     label "process_high"
     
     conda "${moduleDir}/environment.yml"
@@ -25,7 +25,7 @@ process PYCLONEVI_FULL {
     script:
     def args = task.ext.args ?: ''
     def args2 = task.ext.args2 ?: ''
-    def prefix = task.ext.prefix ?: "${meta.id}"
+    def prefix = task.ext.prefix ?: "${meta.patient}"
     """
     pyclone-vi fit  \\
         -i ${tsv_in} \\
@@ -48,7 +48,7 @@ process PYCLONEVI_FULL {
     END_VERSIONS
     """
     stub:
-    def prefix = task.ext.prefix ?: "${meta.id}"
+    def prefix = task.ext.prefix ?: "${meta.patient}"
     """
     touch ${prefix}_PyCloneVI_OUT.tsv
 
