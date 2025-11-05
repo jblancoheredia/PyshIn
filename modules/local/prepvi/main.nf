@@ -50,8 +50,6 @@ process PREPVI {
         ${args}
 
     mv ${prefix}/${prefix}_PyCloneVI_INN.tsv .
-
-    set +o noclobber
     
     cat <<-END_VERSIONS > versions.yml
     "${task.process}":
