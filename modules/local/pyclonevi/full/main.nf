@@ -4,8 +4,8 @@ process PYCLONEVI_FULL {
     
     conda "${moduleDir}/environment.yml"
     container "${ workflow.containerEngine == 'singularity' && !task.ext.singularity_pull_docker_container ?
-        'docker://blancojmskcc/pyclone-vi:0.1.1':
-        'blancojmskcc/pyclone-vi:0.1.1' }"
+        'docker://blancojmskcc/pyclone-vi:0.1.6':
+        'blancojmskcc/pyclone-vi:0.1.6' }"
 
     input:
     tuple val(meta), path(tsv_in)
