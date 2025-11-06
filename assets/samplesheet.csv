@@ -1,5 +1,5 @@
-patient,sample_id,cnv_vcf,snp_csv
-RM0001,RM0001_Tumour,../01_data/CNV/RM0001/RM0001_Tumour.vcf,../01_data/CSV/RM0001/RM0001_Tumour.csv
-RM0001,RM0001_Plasma1,../01_data/CNV/RM0001/RM0001_Plasma1.vcf,../01_data/CSV/RM0001/RM0001_Plasma1.csv
-RM0002,RM0002_Plasma1,../01_data/CNV/RM0002/RM0002_Plasma1.vcf,../01_data/CSV/RM0002/RM0002_Plasma1.csv
-RM0002,RM0002_Plasma2,../01_data/CNV/RM0002/RM0002_Plasma2.vcf,../01_data/CSV/RM0002/RM0002_Plasma2.csv
+patient,sample_id,cnv_vcf,snp_csv,time_point
+RM0001,RM0001_Tumour,../01_data/CNV/RM0001/RM0001_Tumour.vcf,../01_data/CSV/RM0001/RM0001_Tumour.csv,0
+RM0001,RM0001_Plasma1,../01_data/CNV/RM0001/RM0001_Plasma1.vcf,../01_data/CSV/RM0001/RM0001_Plasma1.csv,10
+RM0002,RM0002_Plasma1,../01_data/CNV/RM0002/RM0002_Plasma1.vcf,../01_data/CSV/RM0002/RM0002_Plasma1.csv,1
+RM0002,RM0002_Plasma2,../01_data/CNV/RM0002/RM0002_Plasma2.vcf,../01_data/CSV/RM0002/RM0002_Plasma2.csv,5
