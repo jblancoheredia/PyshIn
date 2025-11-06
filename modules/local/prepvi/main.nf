@@ -25,13 +25,21 @@ process PREPVI {
     def prefix = task.ext.prefix ?: "${meta.id}"
     """
     rm .command.trace || true
+
     mkdir VCF CSV
+
     mkdir VCF/${prefix}
+
     mkdir CSV/${prefix}
-    cp ${vcfs} VCF/${prefix}/
-    cp ${csvs} CSV/${prefix}/
+
+    for vcf in ${vcfs.join(' ')}:
+        cp vcf VCF/${prefix}/
+
+    for csv in ${csvs.join(' ')}:
+        cp csv CSV/${prefix}/
 
     mkdir -p .mplconfig
+
     export MPLCONFIGDIR="$PWD/.mplconfig"
 
     prepvi \\
