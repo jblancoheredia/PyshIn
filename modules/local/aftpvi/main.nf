@@ -14,17 +14,23 @@ process AFTPVI {
     path(mut_file)
     
     output:
-    tuple val(meta), path("*._OriginalData.tsv"), emit: ori
-    tuple val(meta), path("*._EditedData.tsv")  , emit: edi
-    path "versions.yml"                         , emit: versions
+    tuple val(meta), path("*_OriginalData.tsv"), emit: ori
+    tuple val(meta), path("*_EditedData.tsv")  , emit: edi
+    path "versions.yml"                        , emit: versions
 
     when:
     task.ext.when == null || task.ext.when
 
     script:
     def args = task.ext.args ?: ''
-    def prefix = task.ext.prefix ?: "${meta.patient}"
+    def prefix = task.ext.prefix ?: "${meta.id}"
     """
+    rm .command.trace || true
+
+    mkdir -p .mplconfig
+
+    export MPLCONFIGDIR="$PWD/.mplconfig"
+
     aftpvi \\
         --dir_outs '.' \\
         --patient ${prefix} \\
@@ -45,7 +51,7 @@ process AFTPVI {
     END_VERSIONS
     """
     stub:
-    def prefix = task.ext.prefix ?: "${meta.patient}"
+    def prefix = task.ext.prefix ?: "${meta.id}"
     """
     touch ${prefix}_OriginalData.tsv
     touch ${prefix}_EditedData.tsv
