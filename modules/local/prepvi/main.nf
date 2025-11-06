@@ -8,7 +8,7 @@ process PREPVI {
         'blancojmskcc/prepvi:3.7.0' }"
 
     input:
-    tuple val(meta), val(vcfs), val(csvs)
+    tuple val(meta), path(vcfs), path(csvs)
     val(samples_mode)
     path(mut_file)
     path(pty_file)
@@ -23,16 +23,13 @@ process PREPVI {
     script:
     def args            = task.ext.args ?: ''
     def prefix          = task.ext.prefix ?: "${meta.id}"
-    def csv_files       = (csvs instanceof List) ? csvs.join(' ') : csvs
-    def vcf_files       = (vcfs instanceof List) ? vcfs.join(' ') : vcfs
-
     """
-    rm .command.trace
-    mkdir VCF/ CSV
+    rm .command.trace || true
+    mkdir VCF/ CSV/
     mkdir VCF/${prefix}/
     mkdir CSV/${prefix}/
-    cp ${vcf_files} VCF/${prefix}/
-    cp ${csv_files} CSV/${prefix}/
+    cp ${vcfs} VCF/${prefix}/
+    cp ${csvs} CSV/${prefix}/
 
     mkdir -p .mplconfig
     export MPLCONFIGDIR="\$PWD/.mplconfig"
@@ -48,8 +45,7 @@ process PREPVI {
         --samples_mode ${samples_mode} \\
         ${args}
 
-    mv ${prefix}/${prefix}_PyCloneVI_INN.tsv . || exit 1
-    test -f ${prefix}_PyCloneVI_INN.tsv || exit 1
+    mv ${prefix}/${prefix}_PyCloneVI_INN.tsv . 
     
     cat <<-END_VERSIONS > versions.yml
     "${task.process}":
