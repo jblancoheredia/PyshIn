@@ -15,6 +15,7 @@ include { paramsSummaryMap                                                      
 */
 
 include { AFTPVI                                                                        } from '../modules/local/aftpvi/main'
+include { PLTORI                                                                        } from '../modules/local/pltori/main'
 include { PREPVI                                                                        } from '../modules/local/prepvi/main'
 include { MULTIQC                                                                       } from '../modules/nf-core/multiqc/main'
 include { PYCLONEVI_FULL                                                                } from '../modules/local/pyclonevi/full/main' 
@@ -80,6 +81,11 @@ workflow PYSHIN {
     ch_original_data = AFTPVI.out.ori
     ch_versions = ch_versions.mix(AFTPVI.out.versions)
 
+    //
+    // PLOT_ORIGINALDATA
+    //
+    PLTORI (ch_original_data)
+    ch_versions = ch_versions.mix(PLTORI.out.versions)
 
     //
     // Collate and save software versions
