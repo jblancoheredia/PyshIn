@@ -13,11 +13,11 @@ process PREPVI {
     path(mut_file)
     path(pty_file)
 
+    def meta            = [ id: "${patient_id}", patient: "${patient_id}" ]
+
     output:
     tuple val(meta), path("*_PyCloneVI_INN.tsv"), emit: tsv
     path "versions.yml"                         , emit: versions
-
-    def meta            = [ id: "${patient_id}", patient: "${patient_id}" ]
 
     when:
     task.ext.when == null || task.ext.when
