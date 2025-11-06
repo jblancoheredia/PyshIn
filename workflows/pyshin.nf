@@ -18,6 +18,7 @@ include { AFTPVI                                                                
 include { PLTORI                                                                        } from '../modules/local/pltori/main'
 include { PREPVI                                                                        } from '../modules/local/prepvi/main'
 include { MULTIQC                                                                       } from '../modules/nf-core/multiqc/main'
+include { PYSHCLONE                                                                     } from '../modules/local/pyshclone/main'
 include { PYCLONEVI_FULL                                                                } from '../modules/local/pyclonevi/full/main' 
 
 
