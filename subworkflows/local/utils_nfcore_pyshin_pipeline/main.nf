@@ -116,7 +116,7 @@ workflow PIPELINE_INITIALISATION {
         .groupTuple()
         .map { patient_id, cnvs, snps, timepoints ->
             def meta = [
-                id         : patient_id as String
+                id         : patient_id as String,
                 timepoints : timepoints as List<Integer>
             ]
             def vcfs = [
