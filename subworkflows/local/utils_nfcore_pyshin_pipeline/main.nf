@@ -111,7 +111,7 @@ workflow PIPELINE_INITIALISATION {
             def cnv        = file(rec.cnv_vcf)
             def snp        = file(rec.snp_csv)
             def timepoint  = rec.timepoint as Integer
-            [ patient_id, cnv, snp, timepoints ]
+            [ patient_id, cnv, snp, timepoint ]
         }
         .groupTuple()
         .map { patient_id, cnvs, snps, timepoints ->
