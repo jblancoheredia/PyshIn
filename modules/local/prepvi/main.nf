@@ -32,11 +32,9 @@ process PREPVI {
 
     mkdir CSV/${prefix}
 
-    for vcf in ${vcfs.join(' ')}:
-        cp vcf VCF/${prefix}/
+    cp ${vcfs} VCF/${prefix}/
 
-    for csv in ${csvs.join(' ')}:
-        cp csv CSV/${prefix}/
+    cp ${csvs} CSV/${prefix}/
 
     mkdir -p .mplconfig
 
