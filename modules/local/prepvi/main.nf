@@ -15,29 +15,29 @@ process PREPVI {
 
     output:
     tuple val(meta), path("*_PyCloneVI_INN.tsv"), emit: tsv
-    path "versions.yml"                         , emit: versions
+    path "versions.yml", emit: versions
 
     when:
     task.ext.when == null || task.ext.when
 
     script:
-    def args            = task.ext.args ?: ''
-    def prefix          = task.ext.prefix ?: "${meta.id}"
+    def args   = task.ext.args ?: ''
+    def prefix = task.ext.prefix ?: "${meta.id}"
     """
     rm .command.trace || true
-    mkdir VCF/ CSV/
-    mkdir VCF/${prefix}/
-    mkdir CSV/${prefix}/
+    mkdir VCF CSV
+    mkdir VCF/${prefix}
+    mkdir CSV/${prefix}
     cp ${vcfs} VCF/${prefix}/
     cp ${csvs} CSV/${prefix}/
 
     mkdir -p .mplconfig
-    export MPLCONFIGDIR="\$PWD/.mplconfig"
+    export MPLCONFIGDIR="$PWD/.mplconfig"
 
     prepvi \\
         --dnlt . \\
         --dir_csv CSV/ \\
-        --dir_cnv VCF/  \\
+        --dir_cnv VCF/ \\
         --patient ${prefix} \\
         --dir_mut ${mut_file} \\
         --dir_purity ${pty_file} \\
@@ -45,8 +45,9 @@ process PREPVI {
         --samples_mode ${samples_mode} \\
         ${args}
 
-    mv ${prefix}/${prefix}_PyCloneVI_INN.tsv . 
-    
+    mv ${prefix}/${prefix}_PyCloneVI_INN.tsv . || exit 1
+    test -f ${prefix}_PyCloneVI_INN.tsv || exit 1
+
     cat <<-END_VERSIONS > versions.yml
     "${task.process}":
         prepvi: "3.7.0"
