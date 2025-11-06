@@ -36,9 +36,9 @@ process PREPVI {
 
     cp ${csvs} CSV/${prefix}/
 
-    mkdir -p .mplconfig
+    mkdir .mplconfig
 
-    export MPLCONFIGDIR="$PWD/.mplconfig"
+    export MPLCONFIGDIR=".mplconfig"
 
     prepvi \\
         --dnlt . \\
