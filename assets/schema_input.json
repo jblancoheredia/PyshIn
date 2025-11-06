@@ -32,8 +32,13 @@
                 "exists": true,
                 "pattern": "^([\\S\\s]*\\/)?[^\\s\\/]+\\.csv$",
                 "errorMessage": "CSV file for SNP pileup, cannot contain spaces and must have extension '.csv'"
+            },
+            "timepoint": {
+                "type": "integer",
+                "exists": true,
+                "description": "Days from baseline (Tumour = 0). Negative values allowed."
             }
         },
-        "required": ["patient", "sample_id", "cnv_vcf", "snp_csv"]
+        "required": ["patient", "sample_id", "cnv_vcf", "snp_csv", "timepoint"]
     }
 }
