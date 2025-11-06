@@ -121,7 +121,7 @@ workflow PIPELINE_INITIALISATION {
             def csvs = [
                 snps as List<File>
             ]
-            [ meta, vcfs, csvs ]
+            [ meta, vcfs.flatten(), csvs.flatten() ]
         }
         .set { ch_samplesheet }
 
