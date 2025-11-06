@@ -25,9 +25,9 @@ process PLTORI {
     """
     rm .command.trace || true
 
-    mkdir -p .mplconfig
+    mkdir .mplconfig
 
-    export MPLCONFIGDIR="$PWD/.mplconfig"
+    export MPLCONFIGDIR=".mplconfig"
 
     pltori \\
         --dir_outs '.' \\
