@@ -17,13 +17,14 @@ process PREPVI {
     tuple val(meta), path("*_PyCloneVI_INN.tsv"), emit: tsv
     path "versions.yml"                         , emit: versions
 
+    def meta            = [ id: patient_id_val, patient: patient_id_val ]
+
     when:
     task.ext.when == null || task.ext.when
 
     script:
     def args            = task.ext.args ?: ''
     def patient_id_val  = patient_id.toString()
-    def meta            = [ id: patient_id_val, patient: patient_id_val ]
     def prefix          = task.ext.prefix ?: "${patient_id}"
     def samples         = metas.collect { it.sample_id }.join(',')
     def csv_files       = (csvs instanceof List) ? csvs.join(' ') : csvs
