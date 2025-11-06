@@ -114,8 +114,6 @@ workflow PIPELINE_INITIALISATION {
         .map { patient_id, cnvs, snps ->
             def meta = [
                 id  : patient_id as String
-                vcfs: cnvs as List<File>,
-                csvs: snps as List<File>
             ]
             def vcfs = [
                 cnvs as List<File>
