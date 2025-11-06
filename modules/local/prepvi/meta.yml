@@ -16,12 +16,7 @@ tools:
       identifier: null
 
 input:
-  - - patient_id:
-        type: string
-        description: |
-          Groovy Map containing sample information
-          e.g. `[ id:'sample1' ]`
-    - metas:
+  - - meta:
         type: map
         description: |
           Groovy Map containing sample information

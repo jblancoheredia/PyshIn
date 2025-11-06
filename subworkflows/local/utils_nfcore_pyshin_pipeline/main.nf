@@ -105,16 +105,27 @@ workflow PIPELINE_INITIALISATION {
             def required = ['patient','sample_id','cnv_vcf','snp_csv']
             def missing  = required.findAll { !rec.containsKey(it) || !rec[it] }
             if (missing) throw new IllegalArgumentException("samplesheet missing: ${missing.join(', ')}")
-            def meta = [ patient: rec.patient as String, sample_id: rec.sample_id as String ]
-            def cnv  = file(rec.cnv_vcf)
-            def snp  = file(rec.snp_csv)
-            [ meta.patient, meta, cnv, snp ]
-      }
-      .groupTuple()
-      .map { patient_id, metas, cnvs, snps ->
-          [ patient_id, metas as List<Map>, cnvs as List<File>, snps as List<File> ]
-      }
-      .set { ch_samplesheet }
+            def patient_id = rec.patient as String
+            def cnv        = file(rec.cnv_vcf)
+            def snp        = file(rec.snp_csv)
+            [ patient_id, cnv, snp ]
+        }
+        .groupTuple()
+        .map { patient_id, cnvs, snps ->
+            def meta = [
+                id  : patient_id as String
+                vcfs: cnvs as List<File>,
+                csvs: snps as List<File>
+            ]
+            def vcfs = [
+                cnvs as List<File>
+            ]
+            def csvs = [
+                snps as List<File>
+            ]
+            [ meta, vcfs, csvs ]
+        }
+        .set { ch_samplesheet }
 
     emit:
     samplesheet = ch_samplesheet

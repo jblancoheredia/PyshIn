@@ -1,5 +1,5 @@
 process PREPVI {
-    tag "$patient_id"
+    tag "$meta.id"
     label 'process_high'
 
     conda "${moduleDir}/environment.yml"
@@ -8,12 +8,10 @@ process PREPVI {
         'blancojmskcc/prepvi:3.7.0' }"
 
     input:
-    tuple val(patient_id), val(metas), val(vcfs), val(csvs)
+    tuple val(meta), val(vcfs), val(csvs)
     val(samples_mode)
     path(mut_file)
     path(pty_file)
-
-    def meta            = [ id: "${patient_id}", patient: "${patient_id}" ]
 
     output:
     tuple val(meta), path("*_PyCloneVI_INN.tsv"), emit: tsv
@@ -24,9 +22,7 @@ process PREPVI {
 
     script:
     def args            = task.ext.args ?: ''
-    def patient_id_val  = patient_id.toString()
-    def prefix          = task.ext.prefix ?: "${patient_id}"
-    def samples         = metas.collect { it.sample_id }.join(',')
+    def prefix          = task.ext.prefix ?: "${meta.id}"
     def csv_files       = (csvs instanceof List) ? csvs.join(' ') : csvs
     def vcf_files       = (vcfs instanceof List) ? vcfs.join(' ') : vcfs
 
@@ -61,10 +57,7 @@ process PREPVI {
     END_VERSIONS
     """
     stub:
-    def args = task.ext.args ?: ''
-    def patient_id_val = patient_id.toString()
-    def meta = [ id: patient_id_val, patient: patient_id_val ]
-    def prefix = task.ext.prefix ?: "${patient_id}"
+    def prefix = task.ext.prefix ?: "${meta.id}"
     """
     touch ${prefix}_PyCloneVI_INN.tsv
 
