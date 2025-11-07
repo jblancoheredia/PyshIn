@@ -21,7 +21,6 @@ process PYSHCLONE {
     script:
     def args = task.ext.args ?: ''
     def prefix = task.ext.prefix ?: "${meta.id}"
-    def timepoints = task.ext.timepoints ?: "${meta.timepoints}"
     def tp_raw = task.ext.timepoints ?: "${meta.timepoints}"
     def timepoints = (tp_raw instanceof List) \
       ? timepoints.collect{ it as String }.join(',') \
