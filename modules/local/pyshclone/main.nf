@@ -22,14 +22,24 @@ process PYSHCLONE {
     def args = task.ext.args ?: ''
     def prefix = task.ext.prefix ?: "${meta.id}"
     def timepoints = task.ext.timepoints ?: "${meta.timepoints}"
+    def tp_raw = task.ext.timepoints ?: "${meta.timepoints}"
+    def timepoints = (tp_raw instanceof List) \
+      ? timepoints.collect{ it as String }.join(',') \
+      : timepoints.toString().replaceAll(/[\\[\\]\\s]/, '')
     """
     echo "These are the timepoint: ${timepoints}"
 
     rm .command.trace || true
 
+    export MPLBACKEND=Agg
+
     mkdir .mplconfig
 
+    mkdir \$PWD/../06_cach/{fontconfig,matplotlib}
+
     export MPLCONFIGDIR=".mplconfig"
+
+    export XDG_CACHE_HOME=\$PWD/../06_cach
 
     PyshClone \\
         --outdir . \\
