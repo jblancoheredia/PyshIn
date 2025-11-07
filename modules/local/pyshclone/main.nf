@@ -31,8 +31,6 @@ process PYSHCLONE {
 
     export MPLCONFIGDIR=".mplconfig"
 
-    export XDG_CACHE_HOME="$(mktemp -d)"
-
     PyshClone \\
         --outdir . \\
         --founder 1 \\
