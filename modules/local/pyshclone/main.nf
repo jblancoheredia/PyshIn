@@ -23,7 +23,7 @@ process PYSHCLONE {
     def prefix = task.ext.prefix ?: "${meta.id}"
     def timepoints = task.ext.timepoints ?: "${meta.timepoints}"
     """
-    echo "${timepoints}"
+    echo "These are the timepoint: ${timepoints}"
 
     rm .command.trace || true
 
