@@ -21,9 +21,10 @@ process PYSHCLONE {
     script:
     def args = task.ext.args ?: ''
     def prefix = task.ext.prefix ?: "${meta.id}"
-    def tp1 = task.ext.timepoints ?: "${meta.timepoints}"
-    def tp2 = (tp1 instanceof List)
-    def timepoints = tp2.toString().replaceAll(/[\\[\\]\\s]/, '')  
+    def tp_raw = task.ext.timepoints ?: "${meta.timepoints}"
+    def timepoints = (tp_raw instanceof List)
+      ? tp_raw.join(',')
+      : tp_raw.toString().replace('[','').replace(']','').replaceAll(/\s+/, '')
     """
     echo "These are the timepoints: ${timepoints}"
 
@@ -45,7 +46,7 @@ process PYSHCLONE {
         --max_iter 3 \\
         --patient ${prefix} \\
         --enumeration exhaustive \\
-        --timepoints=${timepoints} \\
+        --timepoints="${timepoints}" \\
         --edited_tsv ${pvi_out_eddited} \\
         ${args}
 
