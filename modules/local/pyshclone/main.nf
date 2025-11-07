@@ -22,7 +22,9 @@ process PYSHCLONE {
     def args = task.ext.args ?: ''
     def prefix = task.ext.prefix ?: "${meta.id}"
     def tp_raw = task.ext.timepoints ?: "${meta.timepoints}"
-    def timepoints = (tp_raw instanceof List) ? timepoints.collect{ it as String }.join(','): timepoints.toString().replaceAll(/[\\[\\]\\s]/, '')
+    def timepoints = (tp_raw instanceof List) \
+        ? tp_raw.collect{ it as String }.join(',') \
+        : tp_raw.toString().replaceAll(/[\\[\\]\\s]/, '')
     """
     echo "These are the timepoint: ${timepoints}"
 
