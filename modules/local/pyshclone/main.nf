@@ -21,12 +21,11 @@ process PYSHCLONE {
     script:
     def args = task.ext.args ?: ''
     def prefix = task.ext.prefix ?: "${meta.id}"
-    def tp_raw = task.ext.timepoints ?: "${meta.timepoints}"
-    def timepoints = (tp_raw instanceof List) \
-        ? tp_raw.collect{ it as String }.join(',') \
-        : tp_raw.toString().replaceAll(/[\\[\\]\\s]/, '')
+    def tp1 = task.ext.timepoints ?: "${meta.timepoints}"
+    def tp2 = (tp1 instanceof List)
+    def timepoints = tp2.toString().replaceAll(/[\\[\\]\\s]/, '')  
     """
-    echo "These are the timepoint: ${timepoints}"
+    echo "These are the timepoints: ${timepoints}"
 
     rm .command.trace || true
 
