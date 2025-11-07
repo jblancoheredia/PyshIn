@@ -9,6 +9,9 @@ process PYSHCLONE {
 
     input:
     tuple val(meta), path(pvi_out_eddited)
+    val(max_iter_phylo_model)
+    val(enumeration_model)
+    val(founder_cluster)
 
     output:
     tuple val(meta), path("*.pdf"), emit: pdf
@@ -42,12 +45,12 @@ process PYSHCLONE {
 
     PyshClone \\
         --outdir . \\
-        --founder 1 \\
-        --max_iter 3 \\
         --patient ${prefix} \\
-        --enumeration exhaustive \\
-        --timepoints="${timepoints}" \\
+        --founder ${founder_cluster} \\
+        --timepoints="${timepoints}"  \\
         --edited_tsv ${pvi_out_eddited} \\
+        --enumeration ${enumeration_model} \\
+        --max_iter ${max_iter_phylo_model}  \\
         ${args}
 
     set +o noclobber

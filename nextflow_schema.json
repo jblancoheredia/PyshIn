@@ -256,11 +256,29 @@
                     "fa_icon": "fas fa-book",
                     "help_text": "Mutations file for PyClone-VI"
                 },
+                "max_iter_phylo_model": {
+                    "type": "integer",
+                    "description": "Maximum number of scaled iterations for PyshClone",
+                    "fa_icon": "fas fa-book",
+                    "help_text": "Set to 3"
+                },
+                "enumeration_model": {
+                    "type": "string",
+                    "description": "Option to run all samples or only plasmas",
+                    "fa_icon": "fas fa-book",
+                    "help_text": "exhaustive & greedy"
+                },
                 "samples_mode": {
                     "type": "string",
                     "description": "Option to run all samples or only plasmas",
                     "fa_icon": "fas fa-book",
                     "help_text": "Set to 'all' for all samples or as 'not' for only plasma samples"
+                },
+                "founder_cluster": {
+                    "type": "integer",
+                    "description": "Cluster with higher probability of be the founder/clonal one aka higher CCFs ",
+                    "fa_icon": "fas fa-book",
+                    "help_text": "Set to 1 for compatibility with R, but pythonically, could be set at 0"
                 }
             }
         }
