@@ -81,7 +81,7 @@ workflow PYSHIN {
     //
     // RUN PYSHCLONE 
     //
-    PYSHCLONE (ch_edited_data)
+    PYSHCLONE (ch_edited_data, params.max_iter_phylo_model, params.enumeration_model, params.founder_cluster)
     ch_final_data = PYSHCLONE.out.tsv
     ch_final_pdfs = PYSHCLONE.out.pdf
     ch_versions = ch_versions.mix(PYSHCLONE.out.versions)
