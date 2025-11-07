@@ -34,11 +34,11 @@ process PYSHCLONE {
 
     mkdir .mplconfig
 
-    mkdir \$PWD/../06_cach/{fontconfig,matplotlib}
+    mkdir -p .cache/{fontconfig,matplotlib}
 
     export MPLCONFIGDIR=".mplconfig"
 
-    export XDG_CACHE_HOME=\$PWD/../06_cach
+    export XDG_CACHE_HOME=".cache"
 
     PyshClone \\
         --outdir . \\
