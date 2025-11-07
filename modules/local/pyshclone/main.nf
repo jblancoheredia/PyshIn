@@ -4,8 +4,8 @@ process PYSHCLONE {
 
     conda "${moduleDir}/environment.yml"
     container "${ workflow.containerEngine == 'singularity' && !task.ext.singularity_pull_docker_container ?
-        'docker://blancojmskcc/pyshclone:1.0.0':
-        'blancojmskcc/pyshclone:1.0.0' }"
+        'docker://blancojmskcc/pyshclone:2.0.0':
+        'blancojmskcc/pyshclone:2.0.0' }"
 
     input:
     tuple val(meta), path(pvi_out_eddited)
@@ -24,17 +24,28 @@ process PYSHCLONE {
     def timepoints = task.ext.timepoints ?: "${meta.timepoints}"
     """
     rm .command.trace || true
+
+    mkdir .mplconfig
+
+    export MPLCONFIGDIR=".mplconfig"
+
     PyshClone \\
-        -@ $task.cpus \\
-        -o ${prefix}.bam \\
+        --outdir . \\
+        --founder 1 \\
+        --max_iter 3 \\
+        --patient ${prefix} \\
+        --enumeration exhaustive \\
+        --timepoints=${timepoints} \\
+        --edited_tsv ${pvi_out_eddited} \\
         ${args}
+
+    set +o noclobber
 
     cat <<-END_VERSIONS > versions.yml
     "${task.process}":
-        pyshclone: 1.0.0
+        pyshclone: 2.0.0
     END_VERSIONS
     """
-
     stub:
     def args = task.ext.args ?: ''
     def prefix = task.ext.prefix ?: "${meta.id}"
@@ -44,7 +55,7 @@ process PYSHCLONE {
 
     cat <<-END_VERSIONS > versions.yml
     "${task.process}":
-        pyshclone: 1.0.0
+        pyshclone: 2.0.0
     END_VERSIONS
     """
 }
