@@ -105,7 +105,9 @@ workflow PIPELINE_INITIALISATION {
                 throw new IllegalArgumentException("Unsupported samplesheet row type: ${row?.getClass()?.name}")
             }
             def required = ['patient','sample_id','cnv_vcf','snp_csv', 'timepoint']
-            def missing  = required.findAll { !rec.containsKey(it) || !rec[it] }
+            def missing  = required.findAll { key ->
+                !rec.containsKey(key) || rec[key] == null || rec[key].toString().trim() == ''
+            }
             if (missing) throw new IllegalArgumentException("samplesheet missing: ${missing.join(', ')}")
             def patient_id = rec.patient as String
             def cnv        = file(rec.cnv_vcf)
