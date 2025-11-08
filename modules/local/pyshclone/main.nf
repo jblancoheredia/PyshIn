@@ -4,8 +4,8 @@ process PYSHCLONE {
 
     conda "${moduleDir}/environment.yml"
     container "${ workflow.containerEngine == 'singularity' && !task.ext.singularity_pull_docker_container ?
-        'docker://blancojmskcc/pyshclone:2.0.0':
-        'blancojmskcc/pyshclone:2.0.0' }"
+        'docker://blancojmskcc/pyshclone:2.1.4':
+        'blancojmskcc/pyshclone:2.1.4' }"
 
     input:
     tuple val(meta), path(pvi_out_eddited)
@@ -57,7 +57,7 @@ process PYSHCLONE {
 
     cat <<-END_VERSIONS > versions.yml
     "${task.process}":
-        pyshclone: 2.0.0
+        pyshclone: 2.1.4
     END_VERSIONS
     """
     stub:
@@ -69,7 +69,7 @@ process PYSHCLONE {
 
     cat <<-END_VERSIONS > versions.yml
     "${task.process}":
-        pyshclone: 2.0.0
+        pyshclone: 2.1.4
     END_VERSIONS
     """
 }
