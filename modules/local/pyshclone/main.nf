@@ -14,9 +14,10 @@ process PYSHCLONE {
     val(founder_cluster)
 
     output:
-    tuple val(meta), path("*.pdf"), emit: pdf
-    tuple val(meta), path("*.tsv"), emit: tsv
-    path "versions.yml"           , emit: versions
+    tuple val(meta), path("*.pdf") , emit: pdf
+    tuple val(meta), path("*.tsv") , emit: tsv
+    tuple val(meta), path("*.json"), emit: json
+    path "versions.yml"            , emit: versions
 
     when:
     task.ext.when == null || task.ext.when
@@ -66,6 +67,7 @@ process PYSHCLONE {
     """
     touch ${prefix}.pdf
     touch ${prefix}.tsv
+    touch ${prefix}.json
 
     cat <<-END_VERSIONS > versions.yml
     "${task.process}":
