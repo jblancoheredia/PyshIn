@@ -1,8 +1,38 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 360 612">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   version="1.1"
+   viewBox="0 0 360 612"
+   id="svg79"
+   sodipodi:docname="PyshIn_metro_light.svg"
+   inkscape:version="1.4 (e7c3feb1, 2024-10-09)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview79"
+     pagecolor="#ffffff"
+     bordercolor="#cccccc"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="1"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="1.6846405"
+     inkscape:cx="12.465568"
+     inkscape:cy="306.8904"
+     inkscape:window-width="2320"
+     inkscape:window-height="1275"
+     inkscape:window-x="1006"
+     inkscape:window-y="25"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg79" />
   <!-- Generator: Adobe Illustrator 30.0.0, SVG Export Plug-In . SVG Version: 2.1.1 Build 123)  -->
-  <defs>
-    <style>
+  <defs
+     id="defs37">
+    <style
+       id="style1">
       .st0 {
         font-family: ArialMT, Arial;
       }
@@ -20,42 +50,64 @@
       }
 
       .st8 {
+        fill: #d45087;
+        letter-spacing: 0em;
+      }
+
+      .st9 {
         fill: #626465;
       }
 
-      .st8, .st4, .st5, .st9, .st10, .st11, .st12 {
+      .st9, .st4, .st5, .st10, .st11, .st12, .st13 {
         stroke: #000;
       }
 
-      .st13 {
+      .st14 {
         fill: url(#linear-gradient1);
       }
 
-      .st14, .st3 {
+      .st15, .st3 {
         font-family: MavenPro-SemiBold, 'Maven Pro';
         font-weight: 600;
       }
 
-      .st15, .st16 {
+      .st16 {
+        fill: #001e5b;
+      }
+
+      .st17, .st18 {
         fill: #696969;
+      }
+
+      .st19 {
+        fill: #ff6361;
+        letter-spacing: 0em;
       }
 
       .st5 {
         stroke-miterlimit: 10;
       }
 
-      .st17 {
+      .st20 {
         fill: none;
         stroke: url(#linear-gradient);
         stroke-linejoin: round;
         stroke-width: 6px;
       }
 
-      .st9 {
+      .st21 {
+        fill: #ffe102;
+      }
+
+      .st10 {
         fill: #39383a;
       }
 
-      .st18 {
+      .st22 {
+        fill: #74437d;
+      }
+
+      .st23 {
         font-family: MavenPro-Regular, 'Maven Pro';
       }
 
@@ -63,7 +115,7 @@
         font-family: Helvetica, Helvetica;
       }
 
-      .st10 {
+      .st11 {
         fill: #1e1c1c;
       }
 
@@ -71,401 +123,1588 @@
         fill: #333;
       }
 
-      .st12 {
+      .st13 {
         fill: #4f4f51;
       }
 
-      .st19 {
+      .st24 {
         font-family: MavenPro-Bold, 'Maven Pro';
         font-size: 34.1px;
       }
 
-      .st19, .st16 {
+      .st24, .st18 {
         font-weight: 700;
       }
 
-      .st16 {
+      .st18 {
         font-family: Roboto-Bold, Roboto;
         font-size: 16.1px;
       }
     </style>
-    <linearGradient id="linear-gradient" x1="182.8" y1="174.2" x2="182.8" y2="538.7" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#001e5b"/>
-      <stop offset="0" stop-color="#1f2864"/>
-      <stop offset="0" stop-color="#3e316d"/>
-      <stop offset=".1" stop-color="#553974"/>
-      <stop offset=".1" stop-color="#663e79"/>
-      <stop offset=".2" stop-color="#70417c"/>
-      <stop offset=".2" stop-color="#74437d"/>
-      <stop offset=".3" stop-color="#77437d"/>
-      <stop offset=".4" stop-color="#81447e"/>
-      <stop offset=".4" stop-color="#924780"/>
-      <stop offset=".4" stop-color="#a94a82"/>
-      <stop offset=".5" stop-color="#c84e85"/>
-      <stop offset=".5" stop-color="#d45087"/>
-      <stop offset=".5" stop-color="#e0557b"/>
-      <stop offset=".6" stop-color="#f15d6c"/>
-      <stop offset=".7" stop-color="#fb6163"/>
-      <stop offset=".8" stop-color="#ff6361"/>
-      <stop offset=".8" stop-color="#ff665e"/>
-      <stop offset=".8" stop-color="#ff7057"/>
-      <stop offset=".9" stop-color="#ff814a"/>
-      <stop offset=".9" stop-color="#ff9838"/>
-      <stop offset="1" stop-color="#ffb721"/>
-      <stop offset="1" stop-color="#ffdc05"/>
-      <stop offset="1" stop-color="#ffe102"/>
+    <linearGradient
+       id="linear-gradient"
+       x1="182.8"
+       y1="146.2"
+       x2="182.8"
+       y2="510.7"
+       gradientUnits="userSpaceOnUse">
+      <stop
+         offset="0"
+         stop-color="#001e5b"
+         id="stop1" />
+      <stop
+         offset="0"
+         stop-color="#1f2864"
+         id="stop2" />
+      <stop
+         offset="0"
+         stop-color="#3e316d"
+         id="stop3" />
+      <stop
+         offset=".1"
+         stop-color="#553974"
+         id="stop4" />
+      <stop
+         offset=".1"
+         stop-color="#663e79"
+         id="stop5" />
+      <stop
+         offset=".2"
+         stop-color="#70417c"
+         id="stop6" />
+      <stop
+         offset=".2"
+         stop-color="#74437d"
+         id="stop7" />
+      <stop
+         offset=".5"
+         stop-color="#d45087"
+         id="stop8" />
+      <stop
+         offset=".5"
+         stop-color="#e0557b"
+         id="stop9" />
+      <stop
+         offset=".6"
+         stop-color="#f15d6c"
+         id="stop10" />
+      <stop
+         offset=".7"
+         stop-color="#fb6163"
+         id="stop11" />
+      <stop
+         offset=".8"
+         stop-color="#ff6361"
+         id="stop12" />
+      <stop
+         offset="1"
+         stop-color="#ffe102"
+         id="stop13" />
     </linearGradient>
-    <linearGradient id="linear-gradient1" x1="332.3" y1="16.2" x2="332.3" y2="66" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#001e5b"/>
-      <stop offset="0" stop-color="#031f5b"/>
-      <stop offset=".1" stop-color="#0d225e"/>
-      <stop offset=".1" stop-color="#1e2763"/>
-      <stop offset=".2" stop-color="#352f6a"/>
-      <stop offset=".2" stop-color="#543873"/>
-      <stop offset=".2" stop-color="#74437d"/>
-      <stop offset=".3" stop-color="#77437d"/>
-      <stop offset=".4" stop-color="#81447e"/>
-      <stop offset=".4" stop-color="#924780"/>
-      <stop offset=".4" stop-color="#a94a82"/>
-      <stop offset=".5" stop-color="#c84e85"/>
-      <stop offset=".5" stop-color="#d45087"/>
-      <stop offset=".5" stop-color="#e0557b"/>
-      <stop offset=".6" stop-color="#f15d6c"/>
-      <stop offset=".7" stop-color="#fb6163"/>
-      <stop offset=".8" stop-color="#ff6361"/>
-      <stop offset=".8" stop-color="#ff675d"/>
-      <stop offset=".8" stop-color="#ff8c41"/>
-      <stop offset=".8" stop-color="#ffab2a"/>
-      <stop offset=".9" stop-color="#ffc218"/>
-      <stop offset=".9" stop-color="#ffd30b"/>
-      <stop offset=".9" stop-color="#ffdd04"/>
-      <stop offset="1" stop-color="#ffe102"/>
+    <linearGradient
+       id="linear-gradient1"
+       x1="337"
+       y1="13.1"
+       x2="337"
+       y2="49.1"
+       gradientUnits="userSpaceOnUse">
+      <stop
+         offset="0"
+         stop-color="#001e5b"
+         id="stop14" />
+      <stop
+         offset="0"
+         stop-color="#031f5b"
+         id="stop15" />
+      <stop
+         offset=".1"
+         stop-color="#0d225e"
+         id="stop16" />
+      <stop
+         offset=".1"
+         stop-color="#1e2763"
+         id="stop17" />
+      <stop
+         offset=".2"
+         stop-color="#352f6a"
+         id="stop18" />
+      <stop
+         offset=".2"
+         stop-color="#543873"
+         id="stop19" />
+      <stop
+         offset=".2"
+         stop-color="#74437d"
+         id="stop20" />
+      <stop
+         offset=".3"
+         stop-color="#77437d"
+         id="stop21" />
+      <stop
+         offset=".4"
+         stop-color="#81447e"
+         id="stop22" />
+      <stop
+         offset=".4"
+         stop-color="#924780"
+         id="stop23" />
+      <stop
+         offset=".4"
+         stop-color="#a94a82"
+         id="stop24" />
+      <stop
+         offset=".5"
+         stop-color="#c84e85"
+         id="stop25" />
+      <stop
+         offset=".5"
+         stop-color="#d45087"
+         id="stop26" />
+      <stop
+         offset=".5"
+         stop-color="#e0557b"
+         id="stop27" />
+      <stop
+         offset=".6"
+         stop-color="#f15d6c"
+         id="stop28" />
+      <stop
+         offset=".7"
+         stop-color="#fb6163"
+         id="stop29" />
+      <stop
+         offset=".8"
+         stop-color="#ff6361"
+         id="stop30" />
+      <stop
+         offset=".8"
+         stop-color="#ff675d"
+         id="stop31" />
+      <stop
+         offset=".8"
+         stop-color="#ff8c41"
+         id="stop32" />
+      <stop
+         offset=".8"
+         stop-color="#ffab2a"
+         id="stop33" />
+      <stop
+         offset=".9"
+         stop-color="#ffc218"
+         id="stop34" />
+      <stop
+         offset=".9"
+         stop-color="#ffd30b"
+         id="stop35" />
+      <stop
+         offset=".9"
+         stop-color="#ffdd04"
+         id="stop36" />
+      <stop
+         offset="1"
+         stop-color="#ffe102"
+         id="stop37" />
     </linearGradient>
   </defs>
-  <g id="Path">
-    <path class="st17" d="M182.8,210.4v209.3-209.3ZM44.3,174.2v35.3c0,.4.2.7.6.7h271.2c2.6,0,5.3-.3,5.3-.7v-35.3M136.7,210.2v-36M234.1,210.2v-36M230,538.7v-17.6c0-.2-.9-.4-1.8-.4h-92.9c-.1,0-.2.2-.2.4v17.6M208.8,419.7c.5,0,1,.4,1,1v51.9c0,.5-.4,1-1,1h-51.9c-.5,0-1-.4-1-1v-51.9c0-.5.4-1,1-1h51.9ZM182.8,473.7v47-47Z"/>
+  <g
+     id="Path">
+    <path
+       class="st20"
+       d="M182.8,182.4v209.3-209.3ZM44.3,146.2v35.3c0,.4.2.7.6.7h271.2c2.6,0,5.3-.3,5.3-.7v-35.3M136.7,182.2v-36M234.1,182.2v-36M230,510.7v-17.6c0-.2-.9-.4-1.8-.4h-92.9c-.1,0-.2.2-.2.4v17.6M208.8,391.7c.5,0,1,.4,1,1v51.9c0,.5-.4,1-1,1h-51.9c-.5,0-1-.4-1-1v-51.9c0-.5.4-1,1-1h51.9ZM182.8,445.7v47-47Z"
+       id="path37" />
   </g>
-  <g id="Stops">
-    <g>
-      <text class="st19" transform="translate(15 51.5)"><tspan x="0" y="0">PyshIn</tspan></text>
-      <text class="st16" transform="translate(127.9 51.5)"><tspan x="0" y="0">/</tspan></text>
-      <rect class="st15" x="134.5" y="39.1" width="1.4" height="3.4"/>
-      <text class="st16" transform="translate(136.5 51.5)"><tspan x="0" y="0">f</tspan></text>
-      <path class="st15" d="M147.6,43v1.8h-4.6v-1.8h4.6ZM147.6,49.8v1.8h-4.6v-1.8h4.6ZM146.4,43v8.5h-2.3v-8.5h2.3ZM150.4,42.7h2.3v9.3c0,.6-.1,1.2-.4,1.6-.3.4-.6.8-1.1,1s-1,.3-1.7.3-.4,0-.6,0c-.2,0-.4,0-.6-.1v-1.7c.1,0,.2,0,.3,0,.1,0,.2,0,.4,0,.3,0,.5,0,.7-.1.2,0,.3-.2.4-.4.1-.2.2-.4.2-.6v-9.3ZM152.7,51.5h-2.3v-9.3c0-.6.1-1.2.4-1.6.3-.4.6-.8,1.1-1,.5-.2,1-.3,1.7-.3s.4,0,.6,0c.2,0,.4,0,.6.1v1.7c-.1,0-.2,0-.3,0-.1,0-.2,0-.4,0-.3,0-.5,0-.7.1-.2,0-.3.2-.4.4,0,.2-.1.4-.1.7v9.3ZM160.2,43v1.8h-4.6v-1.8h4.6ZM160.2,49.8v1.8h-4.6v-1.8h4.6ZM159,43v8.5h-2.3v-8.5h2.3Z"/>
-      <path class="st15" d="M164,44.8v6.7h-2.3v-8.5h2.1v1.8ZM163.5,47h-.3c0-.6,0-1.1.2-1.6s.4-.9.6-1.3c.3-.4.6-.7,1-.9.4-.2.8-.3,1.3-.3s.8,0,1.1.2c.3.1.6.3.9.6.2.3.4.6.6,1.1.1.4.2,1,.2,1.6v5.5c0,.7-.1,1.2-.4,1.7-.2.5-.6.8-1,1.1-.4.2-1,.4-1.6.4s-.4,0-.6,0c-.2,0-.4,0-.6-.1v-1.8c.2,0,.4,0,.5,0,.1,0,.3,0,.4,0,.2,0,.4,0,.5-.1.1,0,.3-.3.3-.5,0-.2.1-.4.1-.7v-5.5c0-.3,0-.6,0-.8,0-.2-.1-.4-.3-.5-.1-.1-.2-.2-.4-.3-.2,0-.3,0-.5,0-.3,0-.6,0-.9.2-.3.1-.5.3-.6.5-.2.2-.3.5-.4.7,0,.3-.1.6-.1.9Z"/>
-      <text class="st16" transform="translate(170 51.5)"><tspan x="0" y="0">/</tspan></text>
-    </g>
-    <g id="text142" class="st1">
-      <g id="text129" class="st1">
-        <text class="st3" transform="translate(207.5 315.6)"><tspan x="0" y="0">PyClone-VI</tspan></text>
-      </g>
-    </g>
-    <g id="text143" class="st1">
-      <g id="text130" class="st1">
-        <text class="st3" transform="translate(62.2 369.9)"><tspan x="0" y="0">After PyClone-VI</tspan></text>
-      </g>
-    </g>
-    <g id="text177" class="st1">
-      <g id="text140" class="st1">
-        <text class="st3" transform="translate(30.3 450.7)"><tspan x="0" y="0">Plot Original Data</tspan></text>
-      </g>
-    </g>
-    <g id="text178" class="st1">
-      <g id="text141" class="st1">
-        <text class="st3" transform="translate(233.6 450.4)"><tspan x="0" y="0">PyshClone</tspan></text>
-      </g>
-    </g>
-    <g id="text179" class="st1">
-      <g id="text145" class="st1">
-        <text class="st3" transform="translate(72.2 259.5)"><tspan x="0" y="0">Pre PyClone-VI</tspan></text>
-      </g>
-    </g>
-    <path id="path142" class="st13" d="M319.5,28.8l12.7-12.6,12.8,12.6s-.3.4-.4.5c-.7.8-1.6,1.6-2.3,2.5l-8.1-7.6v13.4h9.4v4.1h-9.3v2.9s.2.7.3.7h9.1v4.1h-9.4v2.7s.2.6.3.6h9v3.7h-9l-.3.3v9.3h-4.1v-9.6h-9.1v-3.9h9.1v-3.3h-9.1v-4.1h9.1v-3.7h-9.1v-4.1h9.1v-13.4l-7.6,7.6c-.2,0-1.1-1-1.3-1.1l-1.6-1.7h-.2Z"/>
-    <g id="g114-6">
-      <rect id="rect113-6" class="st4" x="302.3" y="126.6" width="38.1" height="47.6"/>
-      <rect id="rect114-6" class="st11" x="299.9" y="145.6" width="42.9" height="19.1"/>
-      <g id="g115-6" class="st1">
-        <g id="text337-6" class="st1">
-          <g id="g463-6" class="st1">
-            <g id="text462-6" class="st1">
-              <g id="text115-6" class="st1">
-                <g id="text236-6" class="st1">
-                  <g class="st1">
-                    <g class="st1">
-                      <g class="st1">
-                        <text class="st2" transform="translate(313.7 158.8)"><tspan x="0" y="0">tsv</tspan></text>
-                      </g>
-                    </g>
-                  </g>
-                </g>
-              </g>
-            </g>
-          </g>
-        </g>
-      </g>
-    </g>
-    <g id="g114-61" data-name="g114-6">
-      <rect id="rect113-61" data-name="rect113-6" class="st4" x="25.2" y="126.6" width="38.1" height="47.6"/>
-      <rect id="rect114-61" data-name="rect114-6" class="st11" x="22.8" y="145.6" width="42.9" height="19.1"/>
-      <g id="g115-61" data-name="g115-6" class="st1">
-        <g id="text337-61" data-name="text337-6" class="st1">
-          <g id="g463-61" data-name="g463-6" class="st1">
-            <g id="text462-61" data-name="text462-6" class="st1">
-              <g id="text115-61" data-name="text115-6" class="st1">
-                <g id="text236-61" data-name="text236-6" class="st1">
-                  <g class="st1">
-                    <g class="st1">
-                      <g class="st1">
-                        <text class="st2" transform="translate(36.6 158.8)"><tspan x="0" y="0">tsv</tspan></text>
-                      </g>
-                    </g>
-                  </g>
-                </g>
-              </g>
-            </g>
-          </g>
-        </g>
-      </g>
-    </g>
-    <text class="st7" transform="translate(16 99.2)"><tspan class="st14"><tspan x="0" y="0">Mutations</tspan></tspan><tspan class="st18"><tspan x=".6" y="14.4">Personalis</tspan></tspan></text>
-    <text class="st7" transform="translate(104 99.2)"><tspan class="st14"><tspan x="0" y="0">Copy Number</tspan></tspan><tspan class="st18"><tspan x="21" y="14.4">Facets</tspan></tspan></text>
-    <text class="st7" transform="translate(212.9 99.2)"><tspan class="st14"><tspan x="0" y="0">mPileUps</tspan></tspan><tspan class="st18"><tspan x="8.9" y="14.4">Facets</tspan></tspan></text>
-    <text class="st7" transform="translate(303.9 99.2)"><tspan class="st14"><tspan x="0" y="0">Purity</tspan></tspan><tspan class="st18"><tspan x="-6.3" y="14.4">LowPass</tspan></tspan></text>
-    <path id="rect111-3" class="st5" d="M173.8,311.2h0c0,4.9,4.1,9,9,9h0c4.9,0,9-4.1,9-9h0c0-4.9-4.1-9-9-9h0c-4.9,0-9,4.1-9,9Z"/>
-    <path id="rect1251" class="st5" d="M173.8,365.4h0c0,4.9,4.1,9,9,9h0c4.9,0,9-4.1,9-9h0c0-4.9-4.1-9-9-9h0c-4.9,0-9,4.1-9,9Z"/>
-    <g id="g23">
-      <rect id="rect14" class="st4" x="111.6" y="538.7" width="38.1" height="47.6"/>
-      <rect id="rect15" class="st8" x="110.1" y="555.1" width="42.9" height="19.1"/>
-      <rect id="rect16" class="st4" x="114.3" y="541.6" width="38.1" height="47.6"/>
-      <rect id="rect17" class="st12" x="112.6" y="557.6" width="42.9" height="19.1"/>
-      <rect id="rect18" class="st4" x="116.9" y="544.9" width="38.1" height="47.6"/>
-      <rect id="rect19" class="st9" x="115.2" y="560" width="42.9" height="19.1"/>
-      <g id="g22">
-        <rect id="rect20" class="st4" x="120" y="548.2" width="38.1" height="47.6"/>
-        <g id="g21">
-          <rect id="rect21" class="st10" x="117.7" y="562.5" width="42.9" height="19.1"/>
-          <g id="text21" class="st1">
-            <g id="g327" class="st1">
-              <g id="g1008" class="st1">
-                <g id="text412" class="st1">
-                  <g id="g1007" class="st1">
-                    <g id="g1006" class="st1">
-                      <g id="g1005" class="st1">
-                        <g id="g1004" class="st1">
-                          <g id="g1003" class="st1">
-                            <g id="g1002" class="st1">
-                              <g id="text1001" class="st1">
-                                <g id="g177" class="st1">
-                                  <g id="g176" class="st1">
-                                    <g id="g175" class="st1">
-                                      <g id="g174" class="st1">
-                                        <g id="g173" class="st1">
-                                          <g id="text1731" class="st1">
-                                            <g id="g326" class="st1">
-                                              <g id="text325" class="st1">
-                                                <g class="st1">
-                                                  <g class="st1">
-                                                    <text class="st0" transform="translate(131.6 575.5)"><tspan x="0" y="0">pdf</tspan></text>
-                                                  </g>
-                                                </g>
-                                              </g>
-                                            </g>
-                                          </g>
-                                        </g>
-                                      </g>
-                                    </g>
-                                  </g>
-                                </g>
-                              </g>
-                            </g>
-                          </g>
-                        </g>
-                      </g>
-                    </g>
-                  </g>
-                </g>
-              </g>
-            </g>
-          </g>
-        </g>
-      </g>
-    </g>
-    <g id="g231" data-name="g23">
-      <rect id="rect141" data-name="rect14" class="st4" x="206.5" y="538.7" width="38.1" height="47.6"/>
-      <rect id="rect151" data-name="rect15" class="st8" x="205" y="555.1" width="42.9" height="19.1"/>
-      <rect id="rect161" data-name="rect16" class="st4" x="209.2" y="541.6" width="38.1" height="47.6"/>
-      <rect id="rect171" data-name="rect17" class="st12" x="207.5" y="557.6" width="42.9" height="19.1"/>
-      <rect id="rect181" data-name="rect18" class="st4" x="211.8" y="544.9" width="38.1" height="47.6"/>
-      <rect id="rect191" data-name="rect19" class="st9" x="210.1" y="560" width="42.9" height="19.1"/>
-      <g id="g221" data-name="g22">
-        <rect id="rect201" data-name="rect20" class="st4" x="214.9" y="548.2" width="38.1" height="47.6"/>
-        <g id="g211" data-name="g21">
-          <rect id="rect211" data-name="rect21" class="st10" x="212.6" y="562.5" width="42.9" height="19.1"/>
-          <g id="text211" data-name="text21" class="st1">
-            <g id="g3271" data-name="g327" class="st1">
-              <g id="g10081" data-name="g1008" class="st1">
-                <g id="text4121" data-name="text412" class="st1">
-                  <g id="g10071" data-name="g1007" class="st1">
-                    <g id="g10061" data-name="g1006" class="st1">
-                      <g id="g10051" data-name="g1005" class="st1">
-                        <g id="g10041" data-name="g1004" class="st1">
-                          <g id="g10031" data-name="g1003" class="st1">
-                            <g id="g10021" data-name="g1002" class="st1">
-                              <g id="text10011" data-name="text1001" class="st1">
-                                <g id="g1771" data-name="g177" class="st1">
-                                  <g id="g1761" data-name="g176" class="st1">
-                                    <g id="g1751" data-name="g175" class="st1">
-                                      <g id="g1741" data-name="g174" class="st1">
-                                        <g id="g1731" data-name="g173" class="st1">
-                                          <g id="text17311" data-name="text1731" class="st1">
-                                            <g id="g3261" data-name="g326" class="st1">
-                                              <g id="text3251" data-name="text325" class="st1">
-                                                <g class="st1">
-                                                  <g class="st1">
-                                                    <text class="st0" transform="translate(227.5 575.5)"><tspan x="0" y="0">tsv</tspan></text>
-                                                  </g>
-                                                </g>
-                                              </g>
-                                            </g>
-                                          </g>
-                                        </g>
-                                      </g>
-                                    </g>
-                                  </g>
-                                </g>
-                              </g>
-                            </g>
-                          </g>
-                        </g>
-                      </g>
-                    </g>
-                  </g>
-                </g>
-              </g>
-            </g>
-          </g>
-        </g>
-      </g>
-    </g>
-    <g id="g232" data-name="g23">
-      <rect id="rect142" data-name="rect14" class="st4" x="111.6" y="121.8" width="38.1" height="47.6"/>
-      <rect id="rect152" data-name="rect15" class="st8" x="110.1" y="138.2" width="42.9" height="19.1"/>
-      <rect id="rect162" data-name="rect16" class="st4" x="114.3" y="124.7" width="38.1" height="47.6"/>
-      <rect id="rect172" data-name="rect17" class="st12" x="112.6" y="140.7" width="42.9" height="19.1"/>
-      <rect id="rect182" data-name="rect18" class="st4" x="116.9" y="128" width="38.1" height="47.6"/>
-      <rect id="rect192" data-name="rect19" class="st9" x="115.2" y="143.1" width="42.9" height="19.1"/>
-      <g id="g222" data-name="g22">
-        <rect id="rect202" data-name="rect20" class="st4" x="120" y="131.3" width="38.1" height="47.6"/>
-        <g id="g212" data-name="g21">
-          <rect id="rect212" data-name="rect21" class="st10" x="117.7" y="145.6" width="42.9" height="19.1"/>
-          <g id="text212" data-name="text21" class="st1">
-            <g id="g3272" data-name="g327" class="st1">
-              <g id="g10082" data-name="g1008" class="st1">
-                <g id="text4122" data-name="text412" class="st1">
-                  <g id="g10072" data-name="g1007" class="st1">
-                    <g id="g10062" data-name="g1006" class="st1">
-                      <g id="g10052" data-name="g1005" class="st1">
-                        <g id="g10042" data-name="g1004" class="st1">
-                          <g id="g10032" data-name="g1003" class="st1">
-                            <g id="g10022" data-name="g1002" class="st1">
-                              <g id="text10012" data-name="text1001" class="st1">
-                                <g id="g1772" data-name="g177" class="st1">
-                                  <g id="g1762" data-name="g176" class="st1">
-                                    <g id="g1752" data-name="g175" class="st1">
-                                      <g id="g1742" data-name="g174" class="st1">
-                                        <g id="g1732" data-name="g173" class="st1">
-                                          <g id="text17312" data-name="text1731" class="st1">
-                                            <g id="g3262" data-name="g326" class="st1">
-                                              <g id="text3252" data-name="text325" class="st1">
-                                                <g class="st1">
-                                                  <g class="st1">
-                                                    <text class="st0" transform="translate(132.6 158.6)"><tspan x="0" y="0">vcf</tspan></text>
-                                                  </g>
-                                                </g>
-                                              </g>
-                                            </g>
-                                          </g>
-                                        </g>
-                                      </g>
-                                    </g>
-                                  </g>
-                                </g>
-                              </g>
-                            </g>
-                          </g>
-                        </g>
-                      </g>
-                    </g>
-                  </g>
-                </g>
-              </g>
-            </g>
-          </g>
-        </g>
-      </g>
-    </g>
-    <g id="g233" data-name="g23">
-      <rect id="rect143" data-name="rect14" class="st4" x="206.5" y="121.8" width="38.1" height="47.6"/>
-      <rect id="rect153" data-name="rect15" class="st8" x="205" y="138.2" width="42.9" height="19.1"/>
-      <rect id="rect163" data-name="rect16" class="st4" x="209.2" y="124.7" width="38.1" height="47.6"/>
-      <rect id="rect173" data-name="rect17" class="st12" x="207.5" y="140.7" width="42.9" height="19.1"/>
-      <rect id="rect183" data-name="rect18" class="st4" x="211.8" y="128" width="38.1" height="47.6"/>
-      <rect id="rect193" data-name="rect19" class="st9" x="210.1" y="143.1" width="42.9" height="19.1"/>
-      <g id="g223" data-name="g22">
-        <rect id="rect203" data-name="rect20" class="st4" x="214.9" y="131.3" width="38.1" height="47.6"/>
-        <g id="g213" data-name="g21">
-          <rect id="rect213" data-name="rect21" class="st10" x="212.6" y="145.6" width="42.9" height="19.1"/>
-          <g id="text213" data-name="text21" class="st1">
-            <g id="g3273" data-name="g327" class="st1">
-              <g id="g10083" data-name="g1008" class="st1">
-                <g id="text4123" data-name="text412" class="st1">
-                  <g id="g10073" data-name="g1007" class="st1">
-                    <g id="g10063" data-name="g1006" class="st1">
-                      <g id="g10053" data-name="g1005" class="st1">
-                        <g id="g10043" data-name="g1004" class="st1">
-                          <g id="g10033" data-name="g1003" class="st1">
-                            <g id="g10023" data-name="g1002" class="st1">
-                              <g id="text10013" data-name="text1001" class="st1">
-                                <g id="g1773" data-name="g177" class="st1">
-                                  <g id="g1763" data-name="g176" class="st1">
-                                    <g id="g1753" data-name="g175" class="st1">
-                                      <g id="g1743" data-name="g174" class="st1">
-                                        <g id="g1733" data-name="g173" class="st1">
-                                          <g id="text17313" data-name="text1731" class="st1">
-                                            <g id="g3263" data-name="g326" class="st1">
-                                              <g id="text3253" data-name="text325" class="st1">
-                                                <g class="st1">
-                                                  <g class="st1">
-                                                    <text class="st0" transform="translate(226.5 158.6)"><tspan x="0" y="0">csv</tspan></text>
-                                                  </g>
-                                                </g>
-                                              </g>
-                                            </g>
-                                          </g>
-                                        </g>
-                                      </g>
-                                    </g>
-                                  </g>
-                                </g>
-                              </g>
-                            </g>
-                          </g>
-                        </g>
-                      </g>
-                    </g>
-                  </g>
-                </g>
-              </g>
-            </g>
-          </g>
-        </g>
-      </g>
-    </g>
-    <path id="rect71" class="st5" d="M182.8,263.8h0c4.9,0,9-3.9,9-9h0c0-4.9-3.9-9-9-9h0c-4.9,0-9,3.9-9,9h0c0,4.9,3.9,9,9,9Z"/>
-    <path id="rect1251-2" class="st5" d="M201.1,446.7h0c0,4.9,4.1,9,9,9h0c4.9,0,9-4.1,9-9h0c0-4.9-4.1-9-9-9h0c-4.9,0-9,4.1-9,9Z"/>
-    <path id="rect111-4" class="st5" d="M146.5,446.7h0c0,4.9,4.1,9,9,9h0c4.9,0,9-4.1,9-9h0c0-4.9-4.1-9-9-9h0c-4.9,0-9,4.1-9,9Z"/>
+  <g
+     id="Balls">
+    <path
+       id="rect71"
+       class="st6"
+       d="M44.3,145h0c2,0,3.6-1.6,3.6-3.6h0c0-2-1.6-3.6-3.6-3.6h0c-2,0-3.6,1.6-3.6,3.6h0c0,2,1.6,3.6,3.6,3.6Z"
+       style="fill:#6600ff" />
   </g>
-  <g id="Balls">
-    <path id="rect711" data-name="rect71" class="st6" d="M44.3,173h0c2,0,3.6-1.6,3.6-3.6h0c0-2-1.6-3.6-3.6-3.6h0c-2,0-3.6,1.6-3.6,3.6h0c0,2,1.6,3.6,3.6,3.6Z"/>
+  <animateMotion
+     repeatCount="indefinite"
+     dur="8.0747414s"
+     begin="0s"
+     xlink:href="#_R_G_L_5_G"
+     fill="freeze"
+     keyTimes="0;0.0826446;0.2603306;0.3429752;0.661157;0.6983471;0.7768595;0.8140496;0.8801653;0.9421487;0.9917355;1"
+     path="M44.28 141.42 C44.28,141.42 44.28,181.76 44.28,181.76 C44.28,181.76 136.61,181.76 136.61,181.76 C136.61,181.76 182.78,181.76 182.78,181.76 C182.78,181.76 182.83,391.67 182.83,391.67 C182.83,391.67 155.86,391.67 155.86,391.67 C155.86,391.67 155.83,445.31 155.83,445.31 C155.83,445.31 182.83,445.31 182.83,445.31 C182.83,445.31 182.83,492.66 182.83,492.66 C182.83,492.66 135.28,492.66 135.28,492.66 C135.28,492.66 135.28,528.16 135.28,528.16 C135.28,528.16 135.28,528.16 135.28,528.16 "
+     keyPoints="0;0.06;0.21;0.29;0.62;0.66;0.75;0.79;0.87;0.94;1;1"
+     keySplines="0.167 0.167 0.833 0.833;0.167 0.167 0.833 0.833;0.167 0.167 0.833 0.833;0.167 0.167 0.833 0.833;0.167 0.167 0.833 0.833;0.167 0.167 0.833 0.833;0.167 0.167 0.833 0.833;0.167 0.167 0.833 0.833;0.167 0.167 0.833 0.833;0.167 0.167 0.833 0.833;0 0 0 0"
+     calcMode="spline" />
+  <animateTransform
+     repeatCount="indefinite"
+     dur="8.0747414s"
+     begin="0s"
+     xlink:href="#_R_G_L_5_G"
+     fill="freeze"
+     attributeName="transform"
+     from="-3.85 -3.85"
+     to="-3.85 -3.85"
+     type="translate"
+     additive="sum"
+     keyTimes="0;1"
+     values="-3.85 -3.85;-3.85 -3.85"
+     keySplines="0 0 1 1"
+     calcMode="spline" />
+  <animate
+     repeatCount="indefinite"
+     dur="8.0747414s"
+     begin="0s"
+     xlink:href="#_R_G_L_5_G_M"
+     fill="freeze"
+     attributeName="opacity"
+     from="1"
+     to="0"
+     keyTimes="0;0.9958678;0.9958678;1"
+     values="1;1;0;0"
+     keySplines="0 0 0 0;0 0 0 0;0 0 0 0"
+     calcMode="spline" />
+  <animateMotion
+     repeatCount="indefinite"
+     dur="8.0747414s"
+     begin="0s"
+     xlink:href="#_R_G_L_4_G"
+     fill="freeze"
+     keyTimes="0;0.8801653;0.9421487;0.9917355;1"
+     path="M182.83 492.66 C182.83,492.66 182.83,492.66 182.83,492.66 C182.83,492.66 229.98,492.66 229.98,492.66 C229.98,492.66 229.98,528.16 229.98,528.16 C229.98,528.16 229.98,528.16 229.98,528.16 "
+     keyPoints="0;0;0.57;1;1"
+     keySplines="0.167 0.167 0.833 0.833;0.167 0.167 0.833 0.833;0.167 0.167 0.833 0.833;0 0 0 0"
+     calcMode="spline" />
+  <animateTransform
+     repeatCount="indefinite"
+     dur="8.0747414s"
+     begin="0s"
+     xlink:href="#_R_G_L_4_G"
+     fill="freeze"
+     attributeName="transform"
+     from="-3.85 -3.85"
+     to="-3.85 -3.85"
+     type="translate"
+     additive="sum"
+     keyTimes="0;1"
+     values="-3.85 -3.85;-3.85 -3.85"
+     keySplines="0 0 1 1"
+     calcMode="spline" />
+  <animate
+     repeatCount="indefinite"
+     dur="8.0747414s"
+     begin="0s"
+     xlink:href="#_R_G_L_4_G_M"
+     fill="freeze"
+     attributeName="opacity"
+     from="0"
+     to="0"
+     keyTimes="0;0.8760331;0.8760335;0.9958678;0.9958678;1"
+     values="0;0;1;1;0;0"
+     keySplines="0 0 0 0;0 0 0 0;0 0 0 0;0 0 0 0;0 0 0 0"
+     calcMode="spline" />
+  <animateMotion
+     repeatCount="indefinite"
+     dur="8.0747414s"
+     begin="0s"
+     xlink:href="#_R_G_L_3_G"
+     fill="freeze"
+     keyTimes="0;0.661157;0.6983471;0.7768595;0.8140496;1"
+     path="M182.83 391.67 C182.83,391.67 182.83,391.67 182.83,391.67 C182.83,391.67 209.69,391.67 209.69,391.67 C209.69,391.67 209.69,445.31 209.69,445.31 C209.69,445.31 182.83,445.31 182.83,445.31 C182.83,445.31 182.83,445.31 182.83,445.31 "
+     keyPoints="0;0;0.25;0.75;1;1"
+     keySplines="0.167 0.167 0.833 0.833;0.167 0.167 0.833 0.833;0.167 0.167 0.833 0.833;0.167 0.167 0.833 0.833;0 0 0 0"
+     calcMode="spline" />
+  <animateTransform
+     repeatCount="indefinite"
+     dur="8.0747414s"
+     begin="0s"
+     xlink:href="#_R_G_L_3_G"
+     fill="freeze"
+     attributeName="transform"
+     from="-3.85 -3.85"
+     to="-3.85 -3.85"
+     type="translate"
+     additive="sum"
+     keyTimes="0;1"
+     values="-3.85 -3.85;-3.85 -3.85"
+     keySplines="0 0 1 1"
+     calcMode="spline" />
+  <animate
+     repeatCount="indefinite"
+     dur="8.0747414s"
+     begin="0s"
+     xlink:href="#_R_G_L_3_G_M"
+     fill="freeze"
+     attributeName="opacity"
+     from="0"
+     to="0"
+     keyTimes="0;0.6570248;0.6570252;0.8181818;0.8181818;1"
+     values="0;0;1;1;0;0"
+     keySplines="0 0 0 0;0 0 0 0;0 0 0 0;0 0 0 0;0 0 0 0"
+     calcMode="spline" />
+  <animateMotion
+     repeatCount="indefinite"
+     dur="8.0747414s"
+     begin="0s"
+     xlink:href="#_R_G_L_2_G"
+     fill="freeze"
+     keyTimes="0;0.2603306;1"
+     path="M136.68 141.42 C136.68,141.42 136.61,181.76 136.61,181.76 C136.61,181.76 136.61,181.76 136.61,181.76 "
+     keyPoints="0;1;1"
+     keySplines="0.167 0.167 0.833 0.833;0 0 0 0"
+     calcMode="spline" />
+  <animateTransform
+     repeatCount="indefinite"
+     dur="8.0747414s"
+     begin="0s"
+     xlink:href="#_R_G_L_2_G"
+     fill="freeze"
+     attributeName="transform"
+     from="-3.85 -3.85"
+     to="-3.85 -3.85"
+     type="translate"
+     additive="sum"
+     keyTimes="0;1"
+     values="-3.85 -3.85;-3.85 -3.85"
+     keySplines="0 0 1 1"
+     calcMode="spline" />
+  <animate
+     repeatCount="indefinite"
+     dur="8.0747414s"
+     begin="0s"
+     xlink:href="#_R_G_L_2_G_M"
+     fill="freeze"
+     attributeName="opacity"
+     from="1"
+     to="0"
+     keyTimes="0;0.2644628;0.2644628;1"
+     values="1;1;0;0"
+     keySplines="0 0 0 0;0 0 0 0;0 0 0 0"
+     calcMode="spline" />
+  <animateMotion
+     repeatCount="indefinite"
+     dur="8.0747414s"
+     begin="0s"
+     xlink:href="#_R_G_L_1_G"
+     fill="freeze"
+     keyTimes="0;0.0826446;0.2603306;0.3429752;1"
+     path="M321.38 141.42 C321.38,141.42 321.38,181.76 321.38,181.76 C321.38,181.76 234.11,181.76 234.11,181.76 C234.11,181.76 182.78,181.76 182.78,181.76 C182.78,181.76 182.78,181.76 182.78,181.76 "
+     keyPoints="0;0.23;0.71;1;1"
+     keySplines="0.167 0.167 0.833 0.833;0.167 0.167 0.833 0.833;0.167 0.167 0.833 0.833;0 0 0 0"
+     calcMode="spline" />
+  <animateTransform
+     repeatCount="indefinite"
+     dur="8.0747414s"
+     begin="0s"
+     xlink:href="#_R_G_L_1_G"
+     fill="freeze"
+     attributeName="transform"
+     from="-3.85 -3.85"
+     to="-3.85 -3.85"
+     type="translate"
+     additive="sum"
+     keyTimes="0;1"
+     values="-3.85 -3.85;-3.85 -3.85"
+     keySplines="0 0 1 1"
+     calcMode="spline" />
+  <animate
+     repeatCount="indefinite"
+     dur="8.0747414s"
+     begin="0s"
+     xlink:href="#_R_G_L_1_G_M"
+     fill="freeze"
+     attributeName="opacity"
+     from="1"
+     to="0"
+     keyTimes="0;0.3429752;0.3429752;1"
+     values="1;1;0;0"
+     keySplines="0 0 0 0;0 0 0 0;0 0 0 0"
+     calcMode="spline" />
+  <animateMotion
+     repeatCount="indefinite"
+     dur="8.0747414s"
+     begin="0s"
+     xlink:href="#_R_G_L_0_G"
+     fill="freeze"
+     keyTimes="0;0.2603306;1"
+     path="M234.08 141.42 C234.08,141.42 234.11,181.76 234.11,181.76 C234.11,181.76 234.11,181.76 234.11,181.76 "
+     keyPoints="0;1;1"
+     keySplines="0.167 0.167 0.833 0.833;0 0 0 0"
+     calcMode="spline" />
+  <animateTransform
+     repeatCount="indefinite"
+     dur="8.0747414s"
+     begin="0s"
+     xlink:href="#_R_G_L_0_G"
+     fill="freeze"
+     attributeName="transform"
+     from="-3.85 -3.85"
+     to="-3.85 -3.85"
+     type="translate"
+     additive="sum"
+     keyTimes="0;1"
+     values="-3.85 -3.85;-3.85 -3.85"
+     keySplines="0 0 1 1"
+     calcMode="spline" />
+  <animate
+     repeatCount="indefinite"
+     dur="8.0747414s"
+     begin="0s"
+     xlink:href="#_R_G_L_0_G_M"
+     fill="freeze"
+     attributeName="opacity"
+     from="1"
+     to="0"
+     keyTimes="0;0.2644628;0.2644628;1"
+     values="1;1;0;0"
+     keySplines="0 0 0 0;0 0 0 0;0 0 0 0"
+     calcMode="spline" />
+  <animate
+     attributeType="XML"
+     attributeName="opacity"
+     dur="8s"
+     from="0"
+     to="1"
+     xlink:href="#time_group" />
+  <g
+     id="_R_G">
+    <g
+       id="_R_G_L_5_G_M">
+      <g
+         id="_R_G_L_5_G">
+        <path
+           id="_R_G_L_5_G_D_0_P_0"
+           fill="#ffffff"
+           fill-opacity="1"
+           fill-rule="nonzero"
+           d=" M3.85 7.45 C3.85,7.45 3.85,7.45 3.85,7.45 C5.81,7.45 7.45,5.89 7.45,3.85 C7.45,1.89 5.89,0.25 3.85,0.25 C1.89,0.25 0.25,1.82 0.25,3.85 C0.25,5.81 1.82,7.45 3.85,7.45z " />
+      </g>
+    </g>
+    <g
+       id="_R_G_L_4_G_M">
+      <g
+         id="_R_G_L_4_G">
+        <path
+           id="_R_G_L_4_G_D_0_P_0"
+           fill="#ffffff"
+           fill-opacity="1"
+           fill-rule="nonzero"
+           d=" M3.85 7.45 C3.85,7.45 3.85,7.45 3.85,7.45 C5.81,7.45 7.45,5.89 7.45,3.85 C7.45,1.89 5.89,0.25 3.85,0.25 C1.89,0.25 0.25,1.82 0.25,3.85 C0.25,5.81 1.82,7.45 3.85,7.45z " />
+      </g>
+    </g>
+    <g
+       id="_R_G_L_3_G_M">
+      <g
+         id="_R_G_L_3_G">
+        <path
+           id="_R_G_L_3_G_D_0_P_0"
+           fill="#ffffff"
+           fill-opacity="1"
+           fill-rule="nonzero"
+           d=" M3.85 7.45 C3.85,7.45 3.85,7.45 3.85,7.45 C5.81,7.45 7.45,5.89 7.45,3.85 C7.45,1.89 5.89,0.25 3.85,0.25 C1.89,0.25 0.25,1.82 0.25,3.85 C0.25,5.81 1.82,7.45 3.85,7.45z " />
+      </g>
+    </g>
+    <g
+       id="_R_G_L_2_G_M">
+      <g
+         id="_R_G_L_2_G">
+        <path
+           id="_R_G_L_2_G_D_0_P_0"
+           fill="#ffffff"
+           fill-opacity="1"
+           fill-rule="nonzero"
+           d=" M3.85 7.45 C3.85,7.45 3.85,7.45 3.85,7.45 C5.81,7.45 7.45,5.89 7.45,3.85 C7.45,1.89 5.89,0.25 3.85,0.25 C1.89,0.25 0.25,1.82 0.25,3.85 C0.25,5.81 1.82,7.45 3.85,7.45z " />
+      </g>
+    </g>
+    <g
+       id="_R_G_L_1_G_M">
+      <g
+         id="_R_G_L_1_G">
+        <path
+           id="_R_G_L_1_G_D_0_P_0"
+           fill="#ffffff"
+           fill-opacity="1"
+           fill-rule="nonzero"
+           d=" M3.85 7.45 C3.85,7.45 3.85,7.45 3.85,7.45 C5.81,7.45 7.45,5.89 7.45,3.85 C7.45,1.89 5.89,0.25 3.85,0.25 C1.89,0.25 0.25,1.82 0.25,3.85 C0.25,5.81 1.82,7.45 3.85,7.45z " />
+      </g>
+    </g>
+    <g
+       id="_R_G_L_0_G_M">
+      <g
+         id="_R_G_L_0_G">
+        <path
+           id="_R_G_L_0_G_D_0_P_0"
+           fill="#ffffff"
+           fill-opacity="1"
+           fill-rule="nonzero"
+           d=" M3.85 7.45 C3.85,7.45 3.85,7.45 3.85,7.45 C5.81,7.45 7.45,5.89 7.45,3.85 C7.45,1.89 5.89,0.25 3.85,0.25 C1.89,0.25 0.25,1.82 0.25,3.85 C0.25,5.81 1.82,7.45 3.85,7.45z " />
+      </g>
+    </g>
+  </g>
+  <g
+     id="time_group" />
+  <g
+     id="Stops">
+    <g
+       id="text142"
+       class="st1">
+      <g
+         id="text129"
+         class="st1">
+        <text
+           class="st3"
+           transform="translate(207.5 287.6)"
+           id="text37"><tspan
+             x="0"
+             y="0"
+             id="tspan37">PyClone-VI</tspan></text>
+      </g>
+    </g>
+    <g
+       id="text143"
+       class="st1">
+      <g
+         id="text130"
+         class="st1">
+        <text
+           class="st3"
+           transform="translate(62.2 341.9)"
+           id="text38"><tspan
+             x="0"
+             y="0"
+             id="tspan38">After PyClone-VI</tspan></text>
+      </g>
+    </g>
+    <g
+       id="text177"
+       class="st1">
+      <g
+         id="text140"
+         class="st1">
+        <text
+           class="st3"
+           transform="translate(30.3 422.7)"
+           id="text39"><tspan
+             x="0"
+             y="0"
+             id="tspan39">Plot Original Data</tspan></text>
+      </g>
+    </g>
+    <g
+       id="text178"
+       class="st1">
+      <g
+         id="text141"
+         class="st1">
+        <text
+           class="st3"
+           transform="translate(233.6 422.4)"
+           id="text40"><tspan
+             x="0"
+             y="0"
+             id="tspan40">PyshClone</tspan></text>
+      </g>
+    </g>
+    <g
+       id="text179"
+       class="st1">
+      <g
+         id="text145"
+         class="st1">
+        <text
+           class="st3"
+           transform="translate(72.2 231.5)"
+           id="text41"><tspan
+             x="0"
+             y="0"
+             id="tspan41">Pre PyClone-VI</tspan></text>
+      </g>
+    </g>
+    <g
+       id="g50">
+      <text
+         class="st24"
+         transform="translate(13.7 41.5)"
+         id="text47"><tspan
+           x="0"
+           y="0"
+           id="tspan42">CTI/P</tspan><tspan
+           class="st16"
+           x="89.6"
+           y="0"
+           id="tspan43">y</tspan><tspan
+           class="st22"
+           x="109.8"
+           y="0"
+           id="tspan44">s</tspan><tspan
+           class="st8"
+           x="126.2"
+           y="0"
+           id="tspan45">h</tspan><tspan
+           class="st19"
+           x="147.1"
+           y="0"
+           id="tspan46">I</tspan><tspan
+           class="st21"
+           x="157.4"
+           y="0"
+           id="tspan47">n</tspan></text>
+      <text
+         class="st18"
+         transform="translate(193.7 41.5)"
+         id="text48"><tspan
+           x="0"
+           y="0"
+           id="tspan48">/</tspan></text>
+      <rect
+         class="st17"
+         x="200.2"
+         y="29.1"
+         width="1.4"
+         height="3.4"
+         id="rect48" />
+      <text
+         class="st18"
+         transform="translate(202.2 41.5)"
+         id="text49"><tspan
+           x="0"
+           y="0"
+           id="tspan49">f</tspan></text>
+      <path
+         class="st17"
+         d="M213.3,33v1.8h-4.6v-1.8h4.6ZM213.3,39.8v1.8h-4.6v-1.8h4.6ZM212.1,33v8.5h-2.3v-8.5h2.3ZM216.2,32.7h2.3v9.3c0,.6-.1,1.2-.4,1.6-.3.4-.6.8-1.1,1s-1,.3-1.7.3-.4,0-.6,0c-.2,0-.4,0-.6-.1v-1.7c.1,0,.2,0,.3,0,.1,0,.2,0,.4,0,.3,0,.5,0,.7-.1.2,0,.3-.2.4-.4.1-.2.2-.4.2-.6v-9.3ZM218.5,41.5h-2.3v-9.3c0-.6.1-1.2.4-1.6.3-.4.6-.8,1.1-1,.5-.2,1-.3,1.7-.3s.4,0,.6,0c.2,0,.4,0,.6.1v1.7c-.1,0-.2,0-.3,0-.1,0-.2,0-.4,0-.3,0-.5,0-.7.1-.2,0-.3.2-.4.4,0,.2-.1.4-.1.7v9.3ZM226,33v1.8h-4.6v-1.8h4.6ZM226,39.8v1.8h-4.6v-1.8h4.6ZM224.8,33v8.5h-2.3v-8.5h2.3Z"
+         id="path49" />
+      <path
+         class="st17"
+         d="M229.7,34.8v6.7h-2.3v-8.5h2.1v1.8ZM229.3,37h-.3c0-.6,0-1.1.2-1.6s.4-.9.6-1.3c.3-.4.6-.7,1-.9.4-.2.8-.3,1.3-.3s.8,0,1.1.2c.3.1.6.3.9.6.2.3.4.6.6,1.1.1.4.2,1,.2,1.6v5.5c0,.7-.1,1.2-.4,1.7-.2.5-.6.8-1,1.1-.4.2-1,.4-1.6.4s-.4,0-.6,0c-.2,0-.4,0-.6-.1v-1.8c.2,0,.4,0,.5,0,.1,0,.3,0,.4,0,.2,0,.4,0,.5-.1.1,0,.3-.3.3-.5,0-.2.1-.4.1-.7v-5.5c0-.3,0-.6,0-.8,0-.2-.1-.4-.3-.5-.1-.1-.2-.2-.4-.3-.2,0-.3,0-.5,0-.3,0-.6,0-.9.2-.3.1-.5.3-.6.5-.2.2-.3.5-.4.7,0,.3-.1.6-.1.9Z"
+         id="path50" />
+      <text
+         class="st18"
+         transform="translate(235.7 41.5)"
+         id="text50"><tspan
+           x="0"
+           y="0"
+           id="tspan50">/</tspan></text>
+    </g>
+    <path
+       id="path142"
+       class="st14"
+       d="M327.8,22.2l9.2-9.1,9.3,9.1s-.2.3-.3.4c-.5.6-1.2,1.2-1.7,1.8l-5.9-5.5v9.7h6.8v3h-6.7v2.1s.1.5.2.5h6.6v3h-6.8v2s.1.4.2.4h6.5v2.7h-6.5l-.2.2v6.7h-3v-6.9h-6.6v-2.8h6.6v-2.4h-6.6v-3h6.6v-2.7h-6.6v-3h6.6v-9.7l-5.5,5.5c-.1,0-.8-.7-.9-.8l-1.2-1.2h-.1Z" />
+    <g
+       id="g114-6">
+      <rect
+         id="rect113-6"
+         class="st4"
+         x="302.3"
+         y="98.6"
+         width="38.1"
+         height="47.6" />
+      <rect
+         id="rect114-6"
+         class="st12"
+         x="299.9"
+         y="117.6"
+         width="42.9"
+         height="19.1" />
+      <g
+         id="g115-6"
+         class="st1">
+        <g
+           id="text337-6"
+           class="st1">
+          <g
+             id="g463-6"
+             class="st1">
+            <g
+               id="text462-6"
+               class="st1">
+              <g
+                 id="text115-6"
+                 class="st1">
+                <g
+                   id="text236-6"
+                   class="st1">
+                  <g
+                     class="st1"
+                     id="g53">
+                    <g
+                       class="st1"
+                       id="g52">
+                      <g
+                         class="st1"
+                         id="g51">
+                        <text
+                           class="st2"
+                           transform="translate(313.7 130.8)"
+                           id="text51"><tspan
+                             x="0"
+                             y="0"
+                             id="tspan51">tsv</tspan></text>
+                      </g>
+                    </g>
+                  </g>
+                </g>
+              </g>
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+    <g
+       id="g114-61"
+       data-name="g114-6">
+      <rect
+         id="rect113-61"
+         data-name="rect113-6"
+         class="st4"
+         x="25.2"
+         y="98.6"
+         width="38.1"
+         height="47.6" />
+      <rect
+         id="rect114-61"
+         data-name="rect114-6"
+         class="st12"
+         x="22.8"
+         y="117.6"
+         width="42.9"
+         height="19.1" />
+      <g
+         id="g115-61"
+         data-name="g115-6"
+         class="st1">
+        <g
+           id="text337-61"
+           data-name="text337-6"
+           class="st1">
+          <g
+             id="g463-61"
+             data-name="g463-6"
+             class="st1">
+            <g
+               id="text462-61"
+               data-name="text462-6"
+               class="st1">
+              <g
+                 id="text115-61"
+                 data-name="text115-6"
+                 class="st1">
+                <g
+                   id="text236-61"
+                   data-name="text236-6"
+                   class="st1">
+                  <g
+                     class="st1"
+                     id="g56">
+                    <g
+                       class="st1"
+                       id="g55">
+                      <g
+                         class="st1"
+                         id="g54">
+                        <text
+                           class="st2"
+                           transform="translate(36.6 130.8)"
+                           id="text53"><tspan
+                             x="0"
+                             y="0"
+                             id="tspan53">tsv</tspan></text>
+                      </g>
+                    </g>
+                  </g>
+                </g>
+              </g>
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+    <text
+       class="st7"
+       transform="translate(16 71.2)"
+       id="text59"><tspan
+         class="st15"
+         id="tspan57"><tspan
+           x="0"
+           y="0"
+           id="tspan56">Mutations</tspan></tspan><tspan
+         class="st23"
+         id="tspan59"><tspan
+           x=".6"
+           y="14.4"
+           id="tspan58">Personalis</tspan></tspan></text>
+    <text
+       class="st7"
+       transform="translate(104 71.2)"
+       id="text63"><tspan
+         class="st15"
+         id="tspan61"><tspan
+           x="0"
+           y="0"
+           id="tspan60">Copy Number</tspan></tspan><tspan
+         class="st23"
+         id="tspan63"><tspan
+           x="21"
+           y="14.4"
+           id="tspan62">Facets</tspan></tspan></text>
+    <text
+       class="st7"
+       transform="translate(212.9 71.2)"
+       id="text67"><tspan
+         class="st15"
+         id="tspan65"><tspan
+           x="0"
+           y="0"
+           id="tspan64">mPileUps</tspan></tspan><tspan
+         class="st23"
+         id="tspan67"><tspan
+           x="8.9"
+           y="14.4"
+           id="tspan66">Facets</tspan></tspan></text>
+    <text
+       class="st7"
+       transform="translate(303.9 71.2)"
+       id="text71"><tspan
+         class="st15"
+         id="tspan69"><tspan
+           x="0"
+           y="0"
+           id="tspan68">Purity</tspan></tspan><tspan
+         class="st23"
+         id="tspan71"><tspan
+           x="-6.3"
+           y="14.4"
+           id="tspan70">LowPass</tspan></tspan></text>
+    <path
+       id="rect111-3"
+       class="st5"
+       d="M173.8,283.2h0c0,4.9,4.1,9,9,9h0c4.9,0,9-4.1,9-9h0c0-4.9-4.1-9-9-9h0c-4.9,0-9,4.1-9,9Z" />
+    <path
+       id="rect1251"
+       class="st5"
+       d="M173.8,337.4h0c0,4.9,4.1,9,9,9h0c4.9,0,9-4.1,9-9h0c0-4.9-4.1-9-9-9h0c-4.9,0-9,4.1-9,9Z" />
+    <g
+       id="g23">
+      <rect
+         id="rect14"
+         class="st4"
+         x="111.6"
+         y="510.7"
+         width="38.1"
+         height="47.6" />
+      <rect
+         id="rect15"
+         class="st9"
+         x="110.1"
+         y="527.1"
+         width="42.9"
+         height="19.1" />
+      <rect
+         id="rect16"
+         class="st4"
+         x="114.3"
+         y="513.6"
+         width="38.1"
+         height="47.6" />
+      <rect
+         id="rect17"
+         class="st13"
+         x="112.6"
+         y="529.6"
+         width="42.9"
+         height="19.1" />
+      <rect
+         id="rect18"
+         class="st4"
+         x="116.9"
+         y="516.9"
+         width="38.1"
+         height="47.6" />
+      <rect
+         id="rect19"
+         class="st10"
+         x="115.2"
+         y="532"
+         width="42.9"
+         height="19.1" />
+      <g
+         id="g22">
+        <rect
+           id="rect20"
+           class="st4"
+           x="120"
+           y="520.2"
+           width="38.1"
+           height="47.6" />
+        <g
+           id="g21">
+          <rect
+             id="rect21"
+             class="st11"
+             x="117.7"
+             y="534.5"
+             width="42.9"
+             height="19.1" />
+          <g
+             id="text21"
+             class="st1">
+            <g
+               id="g327"
+               class="st1">
+              <g
+                 id="g1008"
+                 class="st1">
+                <g
+                   id="text412"
+                   class="st1">
+                  <g
+                     id="g1007"
+                     class="st1">
+                    <g
+                       id="g1006"
+                       class="st1">
+                      <g
+                         id="g1005"
+                         class="st1">
+                        <g
+                           id="g1004"
+                           class="st1">
+                          <g
+                             id="g1003"
+                             class="st1">
+                            <g
+                               id="g1002"
+                               class="st1">
+                              <g
+                                 id="text1001"
+                                 class="st1">
+                                <g
+                                   id="g177"
+                                   class="st1">
+                                <g
+                                   id="g176"
+                                   class="st1">
+                                <g
+                                   id="g175"
+                                   class="st1">
+                                <g
+                                   id="g174"
+                                   class="st1">
+                                <g
+                                   id="g173"
+                                   class="st1">
+                                <g
+                                   id="text1731"
+                                   class="st1">
+                                <g
+                                   id="g326"
+                                   class="st1">
+                                <g
+                                   id="text325"
+                                   class="st1">
+                                <g
+                                   class="st1"
+                                   id="g73">
+                                <g
+                                   class="st1"
+                                   id="g72">
+                                <text
+                                   class="st0"
+                                   transform="translate(131.6 547.5)"
+                                   id="text72"><tspan
+                                   x="0"
+                                   y="0"
+                                   id="tspan72">pdf</tspan></text>
+                                </g>
+                                </g>
+                                </g>
+                                </g>
+                                </g>
+                                </g>
+                                </g>
+                                </g>
+                                </g>
+                                </g>
+                              </g>
+                            </g>
+                          </g>
+                        </g>
+                      </g>
+                    </g>
+                  </g>
+                </g>
+              </g>
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+    <g
+       id="g231"
+       data-name="g23">
+      <rect
+         id="rect141"
+         data-name="rect14"
+         class="st4"
+         x="206.5"
+         y="510.7"
+         width="38.1"
+         height="47.6" />
+      <rect
+         id="rect151"
+         data-name="rect15"
+         class="st9"
+         x="205"
+         y="527.1"
+         width="42.9"
+         height="19.1" />
+      <rect
+         id="rect161"
+         data-name="rect16"
+         class="st4"
+         x="209.2"
+         y="513.6"
+         width="38.1"
+         height="47.6" />
+      <rect
+         id="rect171"
+         data-name="rect17"
+         class="st13"
+         x="207.5"
+         y="529.6"
+         width="42.9"
+         height="19.1" />
+      <rect
+         id="rect181"
+         data-name="rect18"
+         class="st4"
+         x="211.8"
+         y="516.9"
+         width="38.1"
+         height="47.6" />
+      <rect
+         id="rect191"
+         data-name="rect19"
+         class="st10"
+         x="210.1"
+         y="532"
+         width="42.9"
+         height="19.1" />
+      <g
+         id="g221"
+         data-name="g22">
+        <rect
+           id="rect201"
+           data-name="rect20"
+           class="st4"
+           x="214.9"
+           y="520.2"
+           width="38.1"
+           height="47.6" />
+        <g
+           id="g211"
+           data-name="g21">
+          <rect
+             id="rect211"
+             data-name="rect21"
+             class="st11"
+             x="212.6"
+             y="534.5"
+             width="42.9"
+             height="19.1" />
+          <g
+             id="text211"
+             data-name="text21"
+             class="st1">
+            <g
+               id="g3271"
+               data-name="g327"
+               class="st1">
+              <g
+                 id="g10081"
+                 data-name="g1008"
+                 class="st1">
+                <g
+                   id="text4121"
+                   data-name="text412"
+                   class="st1">
+                  <g
+                     id="g10071"
+                     data-name="g1007"
+                     class="st1">
+                    <g
+                       id="g10061"
+                       data-name="g1006"
+                       class="st1">
+                      <g
+                         id="g10051"
+                         data-name="g1005"
+                         class="st1">
+                        <g
+                           id="g10041"
+                           data-name="g1004"
+                           class="st1">
+                          <g
+                             id="g10031"
+                             data-name="g1003"
+                             class="st1">
+                            <g
+                               id="g10021"
+                               data-name="g1002"
+                               class="st1">
+                              <g
+                                 id="text10011"
+                                 data-name="text1001"
+                                 class="st1">
+                                <g
+                                   id="g1771"
+                                   data-name="g177"
+                                   class="st1">
+                                <g
+                                   id="g1761"
+                                   data-name="g176"
+                                   class="st1">
+                                <g
+                                   id="g1751"
+                                   data-name="g175"
+                                   class="st1">
+                                <g
+                                   id="g1741"
+                                   data-name="g174"
+                                   class="st1">
+                                <g
+                                   id="g1731"
+                                   data-name="g173"
+                                   class="st1">
+                                <g
+                                   id="text17311"
+                                   data-name="text1731"
+                                   class="st1">
+                                <g
+                                   id="g3261"
+                                   data-name="g326"
+                                   class="st1">
+                                <g
+                                   id="text3251"
+                                   data-name="text325"
+                                   class="st1">
+                                <g
+                                   class="st1"
+                                   id="g75">
+                                <g
+                                   class="st1"
+                                   id="g74">
+                                <text
+                                   class="st0"
+                                   transform="translate(227.5 547.5)"
+                                   id="text73"><tspan
+                                   x="0"
+                                   y="0"
+                                   id="tspan73">tsv</tspan></text>
+                                </g>
+                                </g>
+                                </g>
+                                </g>
+                                </g>
+                                </g>
+                                </g>
+                                </g>
+                                </g>
+                                </g>
+                              </g>
+                            </g>
+                          </g>
+                        </g>
+                      </g>
+                    </g>
+                  </g>
+                </g>
+              </g>
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+    <g
+       id="g232"
+       data-name="g23">
+      <rect
+         id="rect142"
+         data-name="rect14"
+         class="st4"
+         x="111.6"
+         y="93.8"
+         width="38.1"
+         height="47.6" />
+      <rect
+         id="rect152"
+         data-name="rect15"
+         class="st9"
+         x="110.1"
+         y="110.2"
+         width="42.9"
+         height="19.1" />
+      <rect
+         id="rect162"
+         data-name="rect16"
+         class="st4"
+         x="114.3"
+         y="96.7"
+         width="38.1"
+         height="47.6" />
+      <rect
+         id="rect172"
+         data-name="rect17"
+         class="st13"
+         x="112.6"
+         y="112.7"
+         width="42.9"
+         height="19.1" />
+      <rect
+         id="rect182"
+         data-name="rect18"
+         class="st4"
+         x="116.9"
+         y="100"
+         width="38.1"
+         height="47.6" />
+      <rect
+         id="rect192"
+         data-name="rect19"
+         class="st10"
+         x="115.2"
+         y="115.1"
+         width="42.9"
+         height="19.1" />
+      <g
+         id="g222"
+         data-name="g22">
+        <rect
+           id="rect202"
+           data-name="rect20"
+           class="st4"
+           x="120"
+           y="103.3"
+           width="38.1"
+           height="47.6" />
+        <g
+           id="g212"
+           data-name="g21">
+          <rect
+             id="rect212"
+             data-name="rect21"
+             class="st11"
+             x="117.7"
+             y="117.6"
+             width="42.9"
+             height="19.1" />
+          <g
+             id="text212"
+             data-name="text21"
+             class="st1">
+            <g
+               id="g3272"
+               data-name="g327"
+               class="st1">
+              <g
+                 id="g10082"
+                 data-name="g1008"
+                 class="st1">
+                <g
+                   id="text4122"
+                   data-name="text412"
+                   class="st1">
+                  <g
+                     id="g10072"
+                     data-name="g1007"
+                     class="st1">
+                    <g
+                       id="g10062"
+                       data-name="g1006"
+                       class="st1">
+                      <g
+                         id="g10052"
+                         data-name="g1005"
+                         class="st1">
+                        <g
+                           id="g10042"
+                           data-name="g1004"
+                           class="st1">
+                          <g
+                             id="g10032"
+                             data-name="g1003"
+                             class="st1">
+                            <g
+                               id="g10022"
+                               data-name="g1002"
+                               class="st1">
+                              <g
+                                 id="text10012"
+                                 data-name="text1001"
+                                 class="st1">
+                                <g
+                                   id="g1772"
+                                   data-name="g177"
+                                   class="st1">
+                                <g
+                                   id="g1762"
+                                   data-name="g176"
+                                   class="st1">
+                                <g
+                                   id="g1752"
+                                   data-name="g175"
+                                   class="st1">
+                                <g
+                                   id="g1742"
+                                   data-name="g174"
+                                   class="st1">
+                                <g
+                                   id="g1732"
+                                   data-name="g173"
+                                   class="st1">
+                                <g
+                                   id="text17312"
+                                   data-name="text1731"
+                                   class="st1">
+                                <g
+                                   id="g3262"
+                                   data-name="g326"
+                                   class="st1">
+                                <g
+                                   id="text3252"
+                                   data-name="text325"
+                                   class="st1">
+                                <g
+                                   class="st1"
+                                   id="g77">
+                                <g
+                                   class="st1"
+                                   id="g76">
+                                <text
+                                   class="st0"
+                                   transform="translate(132.6 130.6)"
+                                   id="text75"><tspan
+                                   x="0"
+                                   y="0"
+                                   id="tspan75">vcf</tspan></text>
+                                </g>
+                                </g>
+                                </g>
+                                </g>
+                                </g>
+                                </g>
+                                </g>
+                                </g>
+                                </g>
+                                </g>
+                              </g>
+                            </g>
+                          </g>
+                        </g>
+                      </g>
+                    </g>
+                  </g>
+                </g>
+              </g>
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+    <g
+       id="g233"
+       data-name="g23">
+      <rect
+         id="rect143"
+         data-name="rect14"
+         class="st4"
+         x="206.5"
+         y="93.8"
+         width="38.1"
+         height="47.6" />
+      <rect
+         id="rect153"
+         data-name="rect15"
+         class="st9"
+         x="205"
+         y="110.2"
+         width="42.9"
+         height="19.1" />
+      <rect
+         id="rect163"
+         data-name="rect16"
+         class="st4"
+         x="209.2"
+         y="96.7"
+         width="38.1"
+         height="47.6" />
+      <rect
+         id="rect173"
+         data-name="rect17"
+         class="st13"
+         x="207.5"
+         y="112.7"
+         width="42.9"
+         height="19.1" />
+      <rect
+         id="rect183"
+         data-name="rect18"
+         class="st4"
+         x="211.8"
+         y="100"
+         width="38.1"
+         height="47.6" />
+      <rect
+         id="rect193"
+         data-name="rect19"
+         class="st10"
+         x="210.1"
+         y="115.1"
+         width="42.9"
+         height="19.1" />
+      <g
+         id="g223"
+         data-name="g22">
+        <rect
+           id="rect203"
+           data-name="rect20"
+           class="st4"
+           x="214.9"
+           y="103.3"
+           width="38.1"
+           height="47.6" />
+        <g
+           id="g213"
+           data-name="g21">
+          <rect
+             id="rect213"
+             data-name="rect21"
+             class="st11"
+             x="212.6"
+             y="117.6"
+             width="42.9"
+             height="19.1" />
+          <g
+             id="text213"
+             data-name="text21"
+             class="st1">
+            <g
+               id="g3273"
+               data-name="g327"
+               class="st1">
+              <g
+                 id="g10083"
+                 data-name="g1008"
+                 class="st1">
+                <g
+                   id="text4123"
+                   data-name="text412"
+                   class="st1">
+                  <g
+                     id="g10073"
+                     data-name="g1007"
+                     class="st1">
+                    <g
+                       id="g10063"
+                       data-name="g1006"
+                       class="st1">
+                      <g
+                         id="g10053"
+                         data-name="g1005"
+                         class="st1">
+                        <g
+                           id="g10043"
+                           data-name="g1004"
+                           class="st1">
+                          <g
+                             id="g10033"
+                             data-name="g1003"
+                             class="st1">
+                            <g
+                               id="g10023"
+                               data-name="g1002"
+                               class="st1">
+                              <g
+                                 id="text10013"
+                                 data-name="text1001"
+                                 class="st1">
+                                <g
+                                   id="g1773"
+                                   data-name="g177"
+                                   class="st1">
+                                <g
+                                   id="g1763"
+                                   data-name="g176"
+                                   class="st1">
+                                <g
+                                   id="g1753"
+                                   data-name="g175"
+                                   class="st1">
+                                <g
+                                   id="g1743"
+                                   data-name="g174"
+                                   class="st1">
+                                <g
+                                   id="g1733"
+                                   data-name="g173"
+                                   class="st1">
+                                <g
+                                   id="text17313"
+                                   data-name="text1731"
+                                   class="st1">
+                                <g
+                                   id="g3263"
+                                   data-name="g326"
+                                   class="st1">
+                                <g
+                                   id="text3253"
+                                   data-name="text325"
+                                   class="st1">
+                                <g
+                                   class="st1"
+                                   id="g79">
+                                <g
+                                   class="st1"
+                                   id="g78">
+                                <text
+                                   class="st0"
+                                   transform="translate(226.5 130.6)"
+                                   id="text77"><tspan
+                                   x="0"
+                                   y="0"
+                                   id="tspan77">csv</tspan></text>
+                                </g>
+                                </g>
+                                </g>
+                                </g>
+                                </g>
+                                </g>
+                                </g>
+                                </g>
+                                </g>
+                                </g>
+                              </g>
+                            </g>
+                          </g>
+                        </g>
+                      </g>
+                    </g>
+                  </g>
+                </g>
+              </g>
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+    <path
+       id="rect711"
+       data-name="rect71"
+       class="st5"
+       d="M182.8,235.8h0c4.9,0,9-3.9,9-9h0c0-4.9-3.9-9-9-9h0c-4.9,0-9,3.9-9,9h0c0,4.9,3.9,9,9,9Z" />
+    <path
+       id="rect1251-2"
+       class="st5"
+       d="M201.1,418.7h0c0,4.9,4.1,9,9,9h0c4.9,0,9-4.1,9-9h0c0-4.9-4.1-9-9-9h0c-4.9,0-9,4.1-9,9Z" />
+    <path
+       id="rect111-4"
+       class="st5"
+       d="M146.5,418.7h0c0,4.9,4.1,9,9,9h0c4.9,0,9-4.1,9-9h0c0-4.9-4.1-9-9-9h0c-4.9,0-9,4.1-9,9Z" />
   </g>
 </svg>
