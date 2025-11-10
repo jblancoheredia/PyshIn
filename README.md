@@ -1,9 +1,4 @@
-<h1>
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="docs/images/nf-core-pyshin_logo_dark.png">
-    <img alt="nf-core/pyshin" src="docs/images/nf-core-pyshin_logo_light.png">
-  </picture>
-</h1>
+# MSKCC/CMO/CTI/PyshIn
 
 [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://github.com/codespaces/new/nf-core/pyshin)
 [![GitHub Actions CI Status](https://github.com/nf-core/pyshin/actions/workflows/nf-test.yml/badge.svg)](https://github.com/nf-core/pyshin/actions/workflows/nf-test.yml)
@@ -21,7 +16,10 @@
 
 ## Introduction
 
-**nf-core/pyshin** is a bioinformatics pipeline that ...
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/PyshIn_metro_dark.svg">
+  <img alt="Metro" src="assets/PyshIn_metro_light.svg">
+</picture>
 
 <!-- TODO nf-core:
    Complete this sentence with a 2-3 sentence summary of what types of data the pipeline ingests, a brief overview of the
