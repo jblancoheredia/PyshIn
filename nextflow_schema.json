@@ -276,9 +276,15 @@
                 },
                 "founder_cluster": {
                     "type": "integer",
-                    "description": "Cluster with higher probability of be the founder/clonal one aka higher CCFs ",
+                    "description": "Cluster with higher probability of be the founder/clonal one aka higher CCFs",
                     "fa_icon": "fas fa-book",
                     "help_text": "Set to 1 for compatibility with R, but pythonically, could be set at 0"
+                },
+                "min_cluster_prob": {
+                    "type": "number",
+                    "description": "Threshold filter after PyClone-VI",
+                    "fa_icon": "fas fa-book",
+                    "help_text": "After PyClone-VI filters by this threshold defaults to 0 or no threshold"
                 }
             }
         }
