@@ -4,14 +4,15 @@ process AFTPVI {
 
     conda "${moduleDir}/environment.yml"
     container "${ workflow.containerEngine == 'singularity' && !task.ext.singularity_pull_docker_container ?
-        'docker://blancojmskcc/aftpvi:1.0.2':
-        'blancojmskcc/aftpvi:1.0.2' }"
+        'docker://blancojmskcc/aftpvi:2.0.0':
+        'blancojmskcc/aftpvi:2.0.0' }"
 
     input:
     tuple val(meta), path(pvi_inn), path(pvi_out)
     path(isdriver_file)
     val(samples_mode)
     path(mut_file)
+    val(min_prob)
     
     output:
     tuple val(meta), path("*_OriginalData.tsv"), emit: ori
@@ -36,6 +37,7 @@ process AFTPVI {
         --patient ${prefix} \\
         --pvi_inn ${pvi_inn} \\
         --pvi_out ${pvi_out} \\
+        --min_prob ${min_prob} \\
         --mut_file ${mut_file} \\
         --samples_mode ${samples_mode} \\
         --isdriver_file ${isdriver_file} \\
@@ -47,7 +49,7 @@ process AFTPVI {
 
     cat <<-END_VERSIONS > versions.yml
     "${task.process}":
-        aftpvi: "1.0.2"
+        aftpvi: "2.0.0"
     END_VERSIONS
     """
     stub:
@@ -58,7 +60,7 @@ process AFTPVI {
 
     cat <<-END_VERSIONS > versions.yml
     "${task.process}":
-        aftpvi: "1.0.2"
+        aftpvi: "2.0.0"
     END_VERSIONS
     """
 }
