@@ -67,7 +67,7 @@ workflow PYSHIN {
     //
     // RUN AFTER_PYCLONE-VI
     //
-    AFTPVI (ch_aftpvi_inn, params.isdriver_file, params.samples_mode, params.mutations_file)
+    AFTPVI (ch_aftpvi_inn, params.isdriver_file, params.samples_mode, params.mutations_file, params.min_cluster_prob)
     ch_edited_data = AFTPVI.out.edi
     ch_original_data = AFTPVI.out.ori
     ch_versions = ch_versions.mix(AFTPVI.out.versions)
