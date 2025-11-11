@@ -24,7 +24,6 @@ process AFTPVI {
 
     script:
     def args = task.ext.args ?: ''
-    def min_prob = float{min_prob}
     def prefix = task.ext.prefix ?: "${meta.id}"
     """
     rm .command.trace || true
