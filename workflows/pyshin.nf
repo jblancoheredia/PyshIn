@@ -82,8 +82,8 @@ workflow PYSHIN {
         // RUN PRE_PYCLONE-VI 2PASS
         //
         PREPVI_2PASS (ch_prepvi2pass_inn)
-        ch_prepvi2pass_tsv = PREPV_2PASS.out.tsv
-        ch_versions = ch_versions.mix(PREPV_2PASS.out.versions)
+        ch_prepvi2pass_tsv = PREPVI_2PASS.out.tsv
+        ch_versions = ch_versions.mix(PREPVI_2PASS.out.versions)
 
         //
         // RUN PYCLONE-VI_FULL 2PASS
