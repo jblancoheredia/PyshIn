@@ -17,6 +17,7 @@ process AFTPVI {
     output:
     tuple val(meta), path("*_OriginalData.tsv"), emit: ori
     tuple val(meta), path("*_EditedData.tsv")  , emit: edi
+    tuple val(meta), path("*_muts.csv")        , emit: csv
     path "versions.yml"                        , emit: versions
 
     when:
@@ -57,6 +58,7 @@ process AFTPVI {
     """
     touch ${prefix}_OriginalData.tsv
     touch ${prefix}_EditedData.tsv
+    touch ${prefix}_muts.csv
 
     cat <<-END_VERSIONS > versions.yml
     "${task.process}":
