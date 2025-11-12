@@ -55,7 +55,7 @@ process AFTPVI_2PASS {
 
     cat <<-END_VERSIONS > versions.yml
     "${task.process}":
-        aftpvi: "2.0.0"
+        aftpvi: "2.0.2"
     END_VERSIONS
     """
     stub:
@@ -69,7 +69,7 @@ process AFTPVI_2PASS {
 
     cat <<-END_VERSIONS > versions.yml
     "${task.process}":
-        aftpvi: "2.0.0"
+        aftpvi: "2.0.2"
     END_VERSIONS
     """
 }
