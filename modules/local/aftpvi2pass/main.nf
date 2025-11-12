@@ -17,7 +17,8 @@ process AFTPVI_2PASS {
     output:
     tuple val(meta), path("*_OriginalData_2PASS.tsv"), emit: ori
     tuple val(meta), path("*_EditedData_2PASS.tsv")  , emit: edi
-    path "versions.yml"                        , emit: versions
+    tuple val(meta), path("*_muts_2PASS.csv")        , emit: csv
+    path "versions.yml"                              , emit: versions
 
     when:
     task.ext.when == null || task.ext.when
@@ -44,6 +45,8 @@ process AFTPVI_2PASS {
 
     mv ${prefix}/* .
 
+    mv ${prefix}_muts.csv ${prefix}_muts_2PASS.csv
+
     mv ${prefix}_PyClone_EditedData.tsv ${prefix}_PyClone_EditedData_2PASS.tsv
 
     mv ${prefix}_PyshClon_OriginalData.tsv ${prefix}_PyshClon_OriginalData_2PASS.tsv
@@ -61,6 +64,8 @@ process AFTPVI_2PASS {
     touch ${prefix}_PyshClon_OriginalData_2PASS.tsv
     
     touch ${prefix}_PyClone_EditedData_2PASS.tsv
+
+    touch ${prefix}_muts_2PASS.csv
 
     cat <<-END_VERSIONS > versions.yml
     "${task.process}":
