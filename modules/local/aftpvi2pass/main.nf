@@ -46,7 +46,7 @@ process AFTPVI_2PASS {
 
     mv ${prefix}_PyClone_EditedData.tsv ${prefix}_PyClone_EditedData_2PASS.tsv
 
-    mv ${prefix}_PyClone_OriginalData.tsv ${prefix}_PyClone_OriginalData_2PASS.tsv
+    mv ${prefix}_PyshClon_OriginalData.tsv ${prefix}_PyshClon_OriginalData_2PASS.tsv
 
     set +o noclobber
 
@@ -58,7 +58,7 @@ process AFTPVI_2PASS {
     stub:
     def prefix = task.ext.prefix ?: "${meta.id}"
     """
-    touch ${prefix}_PyClone_OriginalData_2PASS.tsv
+    touch ${prefix}_PyshClon_OriginalData_2PASS.tsv
     
     touch ${prefix}_PyClone_EditedData_2PASS.tsv
 
