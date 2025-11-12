@@ -1,4 +1,4 @@
-process PREPVI {
+process PREPVI_2PASS {
     tag "$meta.id"
     label 'process_high'
 
