@@ -1,4 +1,4 @@
-process AFTPVI {
+process AFTPVI_2PASS {
     tag "$meta.id"
     label 'process_medium'
 
@@ -37,7 +37,6 @@ process AFTPVI {
         --patient ${prefix} \\
         --pvi_inn ${pvi_inn} \\
         --pvi_out ${pvi_out} \\
-        --min_prob ${min_prob} \\
         --mut_file ${mut_file} \\
         --samples_mode ${samples_mode} \\
         --isdriver_file ${isdriver_file} \\

@@ -19,7 +19,10 @@ include { PLTORI                                                                
 include { PREPVI                                                                        } from '../modules/local/prepvi/main'
 include { MULTIQC                                                                       } from '../modules/nf-core/multiqc/main'
 include { PYSHCLONE                                                                     } from '../modules/local/pyshclone/main'
+include { AFTPVI_2PASS                                                                  } from '../modules/local/aftpvi2pass/main'
+include { PREPVI_2PASS                                                                  } from '../modules/local/prepvi2pass/main'
 include { PYCLONEVI_FULL                                                                } from '../modules/local/pyclonevi/full/main' 
+include { PYCLONEVI_FULL    as PYCLONEVI_FULL_2PASS                                     } from '../modules/local/pyclonevi/full/main' 
 
 
 /*
@@ -72,19 +75,64 @@ workflow PYSHIN {
     ch_original_data = AFTPVI.out.ori
     ch_versions = ch_versions.mix(AFTPVI.out.versions)
 
-    //
-    // RUN PLOT_ORIGINALDATA
-    //
-    PLTORI (ch_original_data)
-    ch_versions = ch_versions.mix(PLTORI.out.versions)
+    if (params.min_cluster_prob > 0) {
 
-    //
-    // RUN PYSHCLONE 
-    //
-    PYSHCLONE (ch_edited_data, params.max_iter_phylo_model, params.enumeration_model, params.founder_cluster)
-    ch_final_data = PYSHCLONE.out.tsv
-    ch_final_pdfs = PYSHCLONE.out.pdf
-    ch_versions = ch_versions.mix(PYSHCLONE.out.versions)
+        ch_prepvi2pass_inn = (ch_prepvi_tsv).join(ch_edited_data)
+        //
+        // RUN PRE_PYCLONE-VI 2PASS
+        //
+        PREPVI_2PASS (ch_prepvi2pass_inn)
+        ch_prepvi2pass_tsv = PREPV_2PASS.out.tsv
+        ch_versions = ch_versions.mix(PREPV_2PASS.out.versions)
+
+        //
+        // RUN PYCLONE-VI_FULL 2PASS
+        //
+        PYCLONEVI_FULL_2PASS (ch_prepvi2pass_tsv, params.n_reiterations, params.max_clusters, params.max_iters, params.b_model, params.seed)
+        ch_pyclonevi2pass_tsv = PYCLONEVI_FULL_2PASS.out.tsv
+        ch_versions = ch_versions.mix(PYCLONEVI_FULL_2PASS.out.versions)
+
+        ch_aftpvi2pass_inn = (ch_prepvi2pass_tsv).join(ch_pyclonevi2pass_tsv)
+
+        //
+        // RUN AFTER_PYCLONE-VI 2PASS
+        //
+        AFTPVI_2PASS (ch_aftpvi2pass_inn, params.isdriver_file, params.samples_mode, params.mutations_file, params.min_cluster_prob)
+        ch_edited_data2pass = AFTPVI_2PASS.out.edi
+        ch_original_data2pass = AFTPVI_2PASS.out.ori
+        ch_versions = ch_versions.mix(AFTPVI_2PASS.out.versions)
+
+        //
+        // RUN PLOT_ORIGINALDATA
+        //
+        PLTORI (ch_original_data2pass)
+        ch_versions = ch_versions.mix(PLTORI.out.versions)
+
+        //
+        // RUN PYSHCLONE 
+        //
+        PYSHCLONE (ch_edited_data2pass, params.max_iter_phylo_model, params.enumeration_model, params.founder_cluster)
+        ch_final_data = PYSHCLONE.out.tsv
+        ch_final_pdfs = PYSHCLONE.out.pdf
+        ch_versions = ch_versions.mix(PYSHCLONE.out.versions)
+
+    } else {
+
+        //
+        // RUN PLOT_ORIGINALDATA
+        //
+        PLTORI (ch_original_data)
+        ch_versions = ch_versions.mix(PLTORI.out.versions)
+
+        //
+        // RUN PYSHCLONE 
+        //
+        PYSHCLONE (ch_edited_data, params.max_iter_phylo_model, params.enumeration_model, params.founder_cluster)
+        ch_final_data = PYSHCLONE.out.tsv
+        ch_final_pdfs = PYSHCLONE.out.pdf
+        ch_versions = ch_versions.mix(PYSHCLONE.out.versions)
+
+    }
 
     //
     // Collate and save software versions
