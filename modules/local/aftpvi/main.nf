@@ -4,8 +4,8 @@ process AFTPVI {
 
     conda "${moduleDir}/environment.yml"
     container "${ workflow.containerEngine == 'singularity' && !task.ext.singularity_pull_docker_container ?
-        'docker://blancojmskcc/aftpvi:2.0.0':
-        'blancojmskcc/aftpvi:2.0.0' }"
+        'docker://blancojmskcc/aftpvi:2.0.2':
+        'blancojmskcc/aftpvi:2.0.2' }"
 
     input:
     tuple val(meta), path(pvi_inn), path(pvi_out)
@@ -50,7 +50,7 @@ process AFTPVI {
 
     cat <<-END_VERSIONS > versions.yml
     "${task.process}":
-        aftpvi: "2.0.0"
+        aftpvi: "2.0.2"
     END_VERSIONS
     """
     stub:
@@ -62,7 +62,7 @@ process AFTPVI {
 
     cat <<-END_VERSIONS > versions.yml
     "${task.process}":
-        aftpvi: "2.0.0"
+        aftpvi: "2.0.2"
     END_VERSIONS
     """
 }
