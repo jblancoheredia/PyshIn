@@ -9,9 +9,6 @@ process PREPVI_2PASS {
 
     input:
     tuple val(meta), path(pvi_inn_tsv), path(aftpvi_edited_tsv)
-    val(samples_mode)
-    path(mut_file)
-    path(pty_file)
 
     output:
     tuple val(meta), path("*_PyCloneVI_INN_2PASS.tsv"), emit: tsv
