@@ -22,7 +22,7 @@ include { PYSHCLONE                                                             
 include { AFTPVI_2PASS                                                                  } from '../modules/local/aftpvi2pass/main'
 include { PREPVI_2PASS                                                                  } from '../modules/local/prepvi2pass/main'
 include { PYCLONEVI_FULL                                                                } from '../modules/local/pyclonevi/full/main' 
-include { PYCLONEVI_FULL    as PYCLONEVI_FULL_2PASS                                     } from '../modules/local/pyclonevi/full/main' 
+include { PYCLONEVI_FULL_2PASS                                                          } from '../modules/local/pyclonevi/full/main' 
 
 
 /*
