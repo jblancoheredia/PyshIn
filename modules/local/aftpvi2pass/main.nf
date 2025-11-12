@@ -15,8 +15,8 @@ process AFTPVI_2PASS {
     val(min_prob)
     
     output:
-    tuple val(meta), path("*_OriginalData.tsv"), emit: ori
-    tuple val(meta), path("*_EditedData.tsv")  , emit: edi
+    tuple val(meta), path("*_OriginalData_2PASS.tsv"), emit: ori
+    tuple val(meta), path("*_EditedData_2PASS.tsv")  , emit: edi
     path "versions.yml"                        , emit: versions
 
     when:
@@ -44,6 +44,10 @@ process AFTPVI_2PASS {
 
     mv ${prefix}/* .
 
+    mv ${prefix}_PyClone_EditedData.tsv ${prefix}_PyClone_EditedData_2PASS.tsv
+
+    mv ${prefix}_PyClone_OriginalData.tsv ${prefix}_PyClone_OriginalData_2PASS.tsv
+
     set +o noclobber
 
     cat <<-END_VERSIONS > versions.yml
@@ -54,8 +58,9 @@ process AFTPVI_2PASS {
     stub:
     def prefix = task.ext.prefix ?: "${meta.id}"
     """
-    touch ${prefix}_OriginalData.tsv
-    touch ${prefix}_EditedData.tsv
+    touch ${prefix}_PyClone_OriginalData_2PASS.tsv
+    
+    touch ${prefix}_PyClone_EditedData_2PASS.tsv
 
     cat <<-END_VERSIONS > versions.yml
     "${task.process}":
